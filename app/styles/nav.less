@@ -8,14 +8,14 @@
 	z-index: 2;
 	color: #000;
 	&.white {
-		color: #fff;
+		color: @white-text;
 	}
 	&.black {
-		color: #000;
+		color: @black-text;
 	}
 	@shift: 3rem;
 	@space: 1.2rem;
-	@fontsize: 1.5rem;
+	@fontsize: 1.2rem;
 	@numbersWidth: @fontsize*1.1;
 	.menu {
 		font-size: @fontsize;
@@ -67,7 +67,7 @@
 			}
 			&-number {
 				position: absolute;
-				opacity: .7;
+				opacity: 0.7;
 				left: @shift + @space;
 				transform: translateX(0);
 				transition: all 200ms;

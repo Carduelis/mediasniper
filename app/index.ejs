@@ -3,12 +3,11 @@
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width">
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2:100,400i,700|Open+Sans" rel="stylesheet">
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
-
-		<div class="preloader">
+    <div class="preloader">
 		    <div class="preloader7">
 		        <span></span>
 		    </div>
@@ -16,10 +15,12 @@
     <% include app/tmpl/header.ejs %>
     <% include app/tmpl/nav.ejs %>
 		<div id="fullpage">
+      <div class="section"><% include app/tmpl/slide4-1.ejs %></div>
 			<div class="section"><% include app/tmpl/slide1.ejs %></div>
 			<div class="section"><% include app/tmpl/slide2.ejs %></div>
 			<div class="section"><% include app/tmpl/slide3.ejs %></div>
-			<div class="section"><% include app/tmpl/slide4.ejs %></div>
+			<div class="section"><% include app/tmpl/slide4-1.ejs %></div>
+			<div class="section"><% include app/tmpl/slide4-1.ejs %></div>
 			<div class="section"><% include app/tmpl/slide5.ejs %></div>
 			<div class="section"><% include app/tmpl/slide6.ejs %></div>
 			<div class="section"><% include app/tmpl/slide7.ejs %></div>

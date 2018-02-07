@@ -1,0 +1,64 @@
+section[data-slide='1'] {
+	color: @white-text;
+	.body-shift() {
+		position: relative;
+		top: -0.75em;
+	}
+	.video-shift() {
+		position: relative;
+		top: 0.5em;
+		display: flex;
+		justify-content: flex-end;
+	}
+	.description-shift() {
+		position: relative;
+		top: 0.5em;
+	}
+	.content {
+		height: 80vh;
+		max-height: 42rem;
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+	}
+	.head {
+		position: relative;
+		.title {
+		}
+		.introtext {
+			bottom: -1.25em;
+			left: -2em;
+			letter-spacing: 0.09em;
+			position: absolute;
+			font-style: italic;
+			text-transform: uppercase;
+		}
+	}
+	.body {
+		margin-top: auto;
+		margin-bottom: 1rem;
+		.body-shift();
+		.title {
+			font-size: 3em;
+			letter-spacing: -0.01em;
+		}
+	}
+	.video-block {
+		.video-shift();
+		margin-top: 0;
+		margin-bottom: auto;
+	}
+	.description-block {
+		.description-shift();
+		&::before {
+			content: '';
+			height: 0.3em;
+			background-color: @accent-red;
+			width: 2em;
+			display: block;
+		}
+		.description {
+			font-size: 1.2em;
+		}
+	}
+}

@@ -1,0 +1,26 @@
+section[data-slide='2'] {
+	color: @black-text;
+	.slide-background::before {
+		background-color: rgba(255, 255, 255, 0.7);
+	}
+	.body-shift() {
+		// position: relative;
+		// top: -2.75em;
+	}
+	.head {
+		// position: relative;
+	}
+	.body {
+		display: flex;
+		.body-shift();
+		.item {
+			flex-basis: 12rem;
+			margin-right: 4rem;
+			&-text {
+				.heading();
+				font-size: 1.2em;
+				font-weight: 700;
+			}
+		}
+	}
+}
