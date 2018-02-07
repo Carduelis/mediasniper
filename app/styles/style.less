@@ -1,25 +1,26 @@
 @import '../../node_modules/normalize.css/normalize.css';
 @import '../../node_modules/fullpage.js/dist/jquery.fullPage.css';
 // get the page ready
-* { outline: none; box-sizing: border-box; }
+* {
+	outline: none;
+	box-sizing: border-box;
+	&::before,
+	&::after {
+		box-sizing: border-box;
+	}
+}
 @pad: 1rem;
-body { padding: 0; margin: 0; }
-body, button, input {
-  font-family: 'PT Sans', "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+body {
+	padding: 0;
+	margin: 0;
+}
+body,
+button,
+input {
+	font-family: 'PT Sans', "HelveticaNeue-Light", "Helvetica Neue Light",
+		"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
-header {
-	position: fixed;
-}
-.media-nav {
-	position: fixed;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	display: flex;
-	align-items: center;
-	z-index: 2;
-}
 .soc-network {
 	position: fixed;
 	right: 0;
@@ -33,5 +34,75 @@ header {
 	align-items: center;
 	justify-content: center;
 }
+ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+.screen-card-holder {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 500px;
+	margin: auto;
+	> .screen-card {
+		flex: 0 0 auto;
+	}
+}
+.screen-card {
+	background: #fff;
+	box-shadow: 0 0 10px -5px rgba(0, 0, 0, .2);
+	width: 8rem;
+	height: 6rem;
+	margin: 1rem;
+	margin-bottom: 2rem;
+	border: 0.25rem solid #fff;
+	position: relative;
+	display: flex;
+	&::after {
+		content: attr(data-width)' x 'attr(data-height);
+		content: attr(data-width)' × 'attr(data-height);
+		position: absolute;
+		width: 100%;
+		top: 100%;
+		left: 0;
+		padding: 1rem 0;
+		text-align: center;
+		display: block;
+	}
+	span {
+		// position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		display: block;
+		background-color: #eee;
+		transform: scale(.5);
+		will-change: transform;
+		transition: transform 300ms;
+		&[style] {
+			transform: scale(1);
+		}
+	}
+}
 
+.stylized-header {
+	position: relative;
+	&::after {
+		content: '.';
+		color: red;
+	}
+	&::before {
+		content: '';
+		position: absolute;
+		width: 10em;
+		background-color: #fff;
+		z-index: 0;
+		bottom: 0;
+		left: -2em;
+	}
+}
+
+@import "./nav.less";
+@import "./header.less";
 @import "./welcome.less";
