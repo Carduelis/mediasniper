@@ -1,0 +1,37 @@
+@import '../../node_modules/normalize.css/normalize.css';
+@import '../../node_modules/fullpage.js/dist/jquery.fullPage.css';
+// get the page ready
+* { outline: none; box-sizing: border-box; }
+@pad: 1rem;
+body { padding: 0; margin: 0; }
+body, button, input {
+  font-family: 'PT Sans', "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
+header {
+	position: fixed;
+}
+.media-nav {
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	z-index: 2;
+}
+.soc-network {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	width: 5rem;
+	z-index: 2;
+}
+.section {
+	background-color: #eee;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@import "./welcome.less";
