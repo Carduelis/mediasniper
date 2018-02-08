@@ -1,14 +1,14 @@
 <nav class="media-nav">
-    <ul class="menu">
-				<% data.slides.forEach(function(slide) { %>
-					<li class="item<%- slide.active ? ' active' : ''%>">
-							<a data-menuanchor="<%= slide.anchor %>" href="#<%= slide.anchor %>" class="link">
-									<span class="info">
-										<span class="info-number"><%= slide.id %></span>
-											<span class="info-title"><%= slide.title %></span>
-									</span>
-							</a>
-					</li>
-				<% }); %>
-    </ul>
+	<ul class="menu" data-selector="menu">
+			<% data.slides.filter(function(slide) {return slide.type === 'main'}).forEach(function(slide) { %>
+			<li class="item<%- slide.active ? ' active' : ''%>">
+					<a data-menuanchor="<%= slide.anchor %>" href="#<%= slide.anchor %>" class="link">
+							<span class="info">
+								<span class="info-number"><%= slide.titleId %></span>
+								<span class="info-title"><%= slide.title %></span>
+							</span>
+					</a>
+			</li>
+			<% }); %>
+	</ul>
 </nav>

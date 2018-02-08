@@ -6,13 +6,6 @@
 	display: flex;
 	align-items: center;
 	z-index: 2;
-	color: #000;
-	&.white {
-		color: @white-text;
-	}
-	&.black {
-		color: @black-text;
-	}
 	@shift: 3rem;
 	@space: 1.2rem;
 	@fontsize: 1.2rem;
@@ -21,12 +14,19 @@
 		font-size: @fontsize;
 		position: relative;
 		margin-left: 1rem;
+		&[data-color="white"] {
+			color: @white-text;
+		}
+		&[data-color="black"] {
+			color: @black-text;
+		}
 		li {
 			margin: 1rem 0;
 		}
 		&::after {
 			content: '';
 			border-left: 1px solid;
+			opacity: .3;
 			position: absolute;
 			top: 0;
 			bottom: 0;
@@ -52,6 +52,7 @@
 			}
 		}
 		&.active {
+			text-shadow: 0 0 1px;
 			.info::before {
 				color: @accent-red;
 				transform: scale(1.2);
