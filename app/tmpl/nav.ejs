@@ -1,68 +1,14 @@
 <nav class="media-nav">
     <ul class="menu">
-        <li data-menuanchor="firstSection" class="item">
-            <a href="#firstSection" title="First Section" class="link active">
-                <span class="info">
-                    <span class="info-number">01</span>
-                    <span class="info-title">Главная</span>
-                </span>
-            </a>
-        </li>
-        <li data-menuanchor="secondSection" class="item">
-            <a href="#secondSection" title="Second Section" class="link">
-                <span class="info">
-                    <span class="info-number">02</span>
-                    <span class="info-title">О нас</span>
-                </span>
-            </a>
-        </li>
-        <li data-menuanchor="thirdSection" class="item">
-            <a href="#thirdSection" title="Second Section" class="link">
-                <span class="info">
-                    <span class="info-number">03</span>
-                    <span class="info-title">Награды</span>
-                </span>
-            </a>
-        </li>
-        <li data-menuanchor="fourthSection" class="item">
-            <a href="#fourthSection" title="Fourth Section" class="link">
-                <span class="info">
-                    <span class="info-number">04</span>
-                    <span class="info-title">Форматы</span>
-                </span>
-            </a>
-        </li>
-        <li data-menuanchor="fifthSection" class="item">
-            <a href="#fifthSection" title="First Slide" class="link">
-                <span class="info">
-                    <span class="info-number">05</span>
-                    <span class="info-title">Инструменты</span>
-                </span>
-            </a>
-        </li>
-        <li data-menuanchor="sixthSection" class="item">
-            <a href="#sixthSection" title="Second Slide" class="link">
-                <span class="info">
-                    <span class="info-number">06</span>
-                    <span class="info-title">ATD</span>
-                </span>
-            </a>
-        </li>
-        <li data-menuanchor="seventhSection" class="item">
-            <a href="#seventhSection" title="Second Slide" class="link">
-                <span class="info">
-                    <span class="info-number">07</span>
-                    <span class="info-title">Клиенты</span>
-                </span>
-            </a>
-        </li>
-        <li data-menuanchor="eighthSection" class="item">
-            <a href="#eighthSection" title="Second Slide" class="link">
-                <span class="info">
-                    <span class="info-number">08</span>
-                    <span class="info-title">Контакты</span>
-                </span>
-            </a>
-        </li>
+				<% data.slides.forEach(function(slide) { %>
+					<li class="item<%- slide.active ? ' active' : ''%>">
+							<a data-menuanchor="<%= slide.anchor %>" href="#<%= slide.anchor %>" class="link">
+									<span class="info">
+										<span class="info-number"><%= slide.id %></span>
+											<span class="info-title"><%= slide.title %></span>
+									</span>
+							</a>
+					</li>
+				<% }); %>
     </ul>
 </nav>
