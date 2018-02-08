@@ -10,6 +10,21 @@
 	width: 4rem;
 	align-items: center;
 	justify-content: center;
+	path {
+		transition: all 300ms;
+	}
+	&[data-color='black'] {
+		color: @black-text;
+		svg path {
+			fill: @black-text;
+		}
+	}
+	&[data-color='white'] {
+		color: @white-text;
+		svg path {
+			fill: @white-text;
+		}
+	}
 	a {
 		display: block;
 		width: @size;

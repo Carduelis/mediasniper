@@ -7,17 +7,19 @@
 	align-items: center;
 	z-index: 2;
 	@shift: 3rem;
-	@space: 1.2rem;
-	@fontsize: 1.2rem;
+	@space: 1.5rem;
+	// @space: 4rem;
+	margin-left: -@space/2;
+	@fontsize: 1rem;
 	@numbersWidth: @fontsize*1.1;
 	.menu {
 		font-size: @fontsize;
 		position: relative;
 		margin-left: 1rem;
-		&[data-color="white"] {
+		&[data-color='white'] {
 			color: @white-text;
 		}
-		&[data-color="black"] {
+		&[data-color='black'] {
 			color: @black-text;
 		}
 		li {
@@ -26,7 +28,7 @@
 		&::after {
 			content: '';
 			border-left: 1px solid;
-			opacity: .3;
+			opacity: 0.3;
 			position: absolute;
 			top: 0;
 			bottom: 0;

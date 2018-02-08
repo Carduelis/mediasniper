@@ -19,6 +19,66 @@ html {
 	background-color: inherit;
 }
 
+.section[data-anchor='slide05'],
+.section[data-anchor='slide06'] {
+	[data-paralax-cover-js] {
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			background-color: #fff;
+			width: 10rem;
+			height: 10rem;
+			margin-top: -5rem;
+			top: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 3em;
+			padding: 1rem;
+			margin-left: -5rem;
+			content: 'Under construction';
+			.exo;
+		}
+		.content {
+			opacity: 0;
+		}
+	}
+}
+.section[data-anchor='slide08'],
+.section[data-anchor='slide07'] {
+	background-color: @accent-grey;
+	[data-paralax-cover-js] {
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			background-color: #fff;
+			width: 10rem;
+			height: 10rem;
+			margin-top: -5rem;
+			top: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 3em;
+			padding: 1rem;
+			margin-left: -5rem;
+			content: 'Under construction';
+			.exo;
+		}
+	}
+	.content {
+		opacity: 0;
+	}
+	[data-paralax-cover-js] {
+		&::before {
+			color: @white-text;
+			background-color: @black-text;
+		}
+	}
+}
+
 .mockup {
 	position: absolute;
 	top: 0;
