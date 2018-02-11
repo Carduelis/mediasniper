@@ -2,6 +2,7 @@
 @accent-white: #fff3f3;
 @accent-white: #fff;
 @accent-grey: #666;
+@accent-grey-05: #212121;
 @accent-light-grey: #8f8f8f;
 @white-text: #fff;
 @black-text: #000;
@@ -10,6 +11,8 @@
 @side-margin-small: 2.5rem;
 @light-blue: #d6e6ec;
 @header-height: 6rem;
+@heading-back-height: 8rem;
+@heading-back-max-width: 30rem;
 @1k: 1100px;
 @2k: 2000px;
 @laptop: 1366px;
@@ -46,5 +49,48 @@
 	to {
 		transform: translateX(0%) skewX(0);
 		opacity: 1;
+	}
+}
+
+
+@keyframes autoScroll {
+		0% {
+			transform: translateX(0);
+		}
+		20% {
+			transform: translateX(0);
+		}
+		80% {
+			transform: translateX(calc(80vw + -100%));
+		}
+		100% {
+			transform: translateX(calc(80vw + -100%));
+		}
+}
+
+@keyframes backword {
+	0% {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+}
+
+@keyframes autoScroll-2 {
+	0% {
+		transform: translateX(-100%);
+	}
+	20% {
+		transform: translateX(-100%);
+	}
+	80% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(0);
 	}
 }

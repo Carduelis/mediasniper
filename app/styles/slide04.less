@@ -31,6 +31,27 @@ section[data-slide^='04'] {
 	.slide-background::before {
 		background-color: @light-blue;
 	}
+
+	.slide-background-word {
+		position: absolute;
+		right: 0;
+		top: 0;
+		opacity: 0;
+		bottom: 0;
+		left: 0;
+		background-size: 50%;
+		animation-delay: 600ms;
+		animation-iteration-count: 1;
+		animation-duration: 600ms;
+		animation-fill-mode: both;
+		background-position: bottom right;
+		z-index: 2;
+		background-repeat: no-repeat;
+		&.animated {
+			animation-name: backword;
+			opacity: 1;
+		}
+	}
 	.top-info {
 		position: absolute;
 		right: 0;

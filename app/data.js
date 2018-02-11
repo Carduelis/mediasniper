@@ -46,7 +46,7 @@ module.exports = {
 		{
 			titleId: "05",
 			type: "main",
-			color: "black",
+			color: "white",
 			title: "Инструменты",
 			anchor: "slide05"
 		},
@@ -71,5 +71,81 @@ module.exports = {
 			title: "Контакты",
 			anchor: "slide08"
 		}
+	],
+	clients: [
+		{
+			name: 'Bayer',
+			image: './assets/client-1.png',
+		},
+		{
+			name: 'Крокус Сити Молл',
+			image: './assets/client-2.png'
+		},{
+			name: 'Lada'
+		}, {
+			name: 'Bosch'
+		},
+		{
+
+		},{
+
+		},{
+
+		},{
+
+		},{
+
+		},{
+
+		},{
+
+		},{
+
+		},{
+
+		},{
+
+		},{
+
+		},{
+
+		},{
+
+		},{
+
+		},{
+
+		},{
+
+		},{
+
+		},{
+
+		},{
+
+		},{
+
+		},{
+
+		},{
+
+		},{
+
+		},{
+
+		},{
+
+		},{
+
+		},{
+
+		},{
+
+		},{
+
+		},{
+
+		}
+
 	]
 };

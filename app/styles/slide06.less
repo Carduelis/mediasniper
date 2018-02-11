@@ -1,3 +1,58 @@
 section[data-slide='06'] {
-	color: @white-text;
+	color: lighten(@black-text, 30%);
+	.slide-background::before {
+		opacity: 0;
+	}
+	.content {
+		align-items: stretch;
+		.columns {
+			flex-basis: 100%;
+			display: flex;
+		}
+		.headers-block {
+			flex-grow: 1;
+			margin-right: 10em;
+			display: flex;
+			align-items: flex-start;
+			flex-direction: column;
+			justify-content: center;
+			max-width: 20em;
+			.title {
+				margin-top: auto;
+				font-size: 1.5em;
+			}
+			.text {
+				margin-top: auto;
+				font-size: 1.5em;
+			}
+		}
+		.list-block {
+			flex-grow: 1;
+			font-size: .65em;
+			flex-shrink: 0;
+			flex-basis: 50%;
+			align-self: flex-end;
+			ul {
+				padding-left: 2em;
+			}
+			li {
+				position: relative;
+				margin: 0.5rem;
+				&:last-child {
+					margin-bottom: 0;
+				}
+				line-height: 1.2em;
+				&::before {
+					content: '—';
+					opacity: .4;
+					margin-left: -2em;
+					position: absolute;
+				}
+				&::first-line {
+					// color: @accent-red;
+					// font-weight: bold;
+				}
+			}
+		}
+	}
 }

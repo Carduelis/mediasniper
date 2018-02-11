@@ -24,7 +24,23 @@ let isFirstLoad = true;
 $(document).ready(() => {
 	$('.preloader').fadeOut();
 	$('.header-toggle').on('click', () => {
-		alert('Under construction');
+		const $menu = $('.fixed-menu');
+		const $header = $('.fixed-header')
+		const currentColor = $header.data('color');
+		const initialColor = $header.data('oldcolor');
+		console.log($menu.hasClass('opened'));
+		if ($menu.hasClass('opened')) {
+			$header.attr('data-color', initialColor);
+			$header.removeAttr('data-colorold')
+		} else {
+			$header.attr('data-color', 'white');
+		}
+		$header.attr('data-oldcolor', currentColor)
+		$('.fixed-menu').toggleClass('opened');
+		$('.header-toggle').toggleClass('active');
+	});
+	$('.fixed-menu a').on('click', function() {
+		$('.header-toggle').click();
 	});
 	$('#fullpage').fullpage({
 		anchors: slides.map(slide => slide.anchor),
@@ -38,6 +54,7 @@ $(document).ready(() => {
 
 			$('.menu, .fixed-header, .socio-networks').attr('data-color', nextSlide.color);
 			reRunAnimationButton(getSlideEl(nextSlide).find('.button'));
+			reanimate($('.animated'));
 			if (!isASubSlide(nextSlide)) {
 				$('.media-nav [data-menuanchor="slide04-1"]').removeClass('active');
 				$('.slide04').fadeOut(100);
@@ -50,6 +67,7 @@ $(document).ready(() => {
 			const $slide = getSlideEl(slide);
 			if (isFirstLoad) {
 				reRunAnimationButton(getSlideEl(slide).find('.button'));
+				reanimate($('.animated'));
 				isFirstLoad = false;
 			}
 			$('.menu, .fixed-header, .socio-networks').attr('data-color', slide.color);

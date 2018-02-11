@@ -1,0 +1,19 @@
+<li><a class="client" href="<%-client.link || '#' %>">
+	<% if (client.image)  { %>
+		<div class="client-inner client-image" style="background-image: url('<%-client.image%>')">
+			<% if (client.name) { %>
+				<span class="client-name"><%- client.name %></span>
+			<% } %>
+		</div>
+	<% } else { %>
+		<div class="client-inner client-imageless" onloadedmetadata="">
+			<span class="client-name">
+				<% if (client.name) { %>
+					<%- client.name %>
+				<% } else { %>
+					<span class="red-dot">#<%- i %></span> client
+				<% } %>
+			</span>
+		</div>
+	<% } %>
+</a></li>

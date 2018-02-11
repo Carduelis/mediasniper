@@ -1,0 +1,11 @@
+<ul class="auto-scroll">
+<% data.clients.filter(function(item, i) { return i % 2 === 1}).forEach(function(client, i) { %>
+	<% include client.ejs %>
+<% }); %>
+</ul>
+
+<ul class="auto-scroll">
+<% data.clients.filter(function(item, i) { return i % 2 === 0}).forEach(function(client, i) { %>
+	<% include client.ejs %>
+<% }); %>
+</ul>
