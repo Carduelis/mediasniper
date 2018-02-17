@@ -4,10 +4,11 @@
 @accent-grey: #666;
 @accent-grey-05: #212121;
 @accent-light-grey: #8f8f8f;
+@letterSpacing: 0.071em;
 @white-text: #fff;
 @black-text: #000;
 @light-grey-text: #c1c8ce;
-@side-margin: 11.5rem;
+@side-margin: 12.2rem;
 @side-margin-small: 2.5rem;
 @light-blue: #d6e6ec;
 @header-height: 6rem;
@@ -16,6 +17,7 @@
 @1k: 1100px;
 @2k: 2000px;
 @laptop: 1366px;
+@strip-height: 0.155rem;
 
 @keyframes buttonLineTop {
 	from {
@@ -92,5 +94,24 @@
 	}
 	100% {
 		transform: translateX(0);
+	}
+}
+
+@keyframes scrollShaking {
+	0% {
+		transform: translateY(0%);
+	}
+	15% {
+		transform: translateY(20%);
+	}
+	20% {
+		transform: translateY(8%);
+	}
+
+	25% {
+		transform: translateY(20%);
+	}
+	40% {
+		transform: translateY(0%);
 	}
 }

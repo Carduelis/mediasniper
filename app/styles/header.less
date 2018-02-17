@@ -3,6 +3,10 @@
 	z-index: 11;
 	width: 100%;
 	left: 0;
+	color: @white-text;
+	svg path {
+		fill: @white-text;
+	}
 	&[data-color='black'] {
 		color: @black-text;
 		svg path {
@@ -29,6 +33,10 @@
 	align-items: center;
 	display: flex;
 	justify-content: flex-start;
+	transition: all 300ms;
+	&.fadeout {
+		opacity: 0;
+	}
 	svg {
 		height: 100%;
 		path {
@@ -42,6 +50,43 @@
 	margin: -1rem;
 	margin-right: 0;
 	margin-top: -1.25rem;
+	&[data-state="arrow"] {
+		// background-color: red;
+		.header-toggle {
+			&::before {
+				transform: rotate(-30deg) scaleY(1) scaleX(0.75) translate(-50%);
+			}
+			&::after {
+				transform: rotate(30deg) scaleY(1) scaleX(0.75) translate(-50%);
+			}
+			span {
+				transform: translateX(-10%) scaleX(1.2);
+			}
+		}
+	}
+	&[data-state="close"] {
+		.header-toggle {
+			&:before {
+				top: 10px;
+				transform: rotate(45deg);
+			}
+			&::after {
+				bottom: 10px;
+				transform: rotate(-45deg);
+			}
+			&:hover {
+				&::before {
+					top: 10px;
+				}
+				&::after {
+					bottom: 10px;
+				}
+			}
+			span {
+				opacity: 0;
+			}
+		}
+	}
 }
 .header-toggle {
 	width: 30px;
@@ -106,28 +151,6 @@
 	}
 }
 
-.header-toggle.active {
-	color: #fff;
-	&:before {
-		top: 10px;
-		transform: rotate(45deg);
-	}
-	&::after {
-		bottom: 10px;
-		transform: rotate(-45deg);
-	}
-	&:hover {
-		&::before {
-			top: 10px;
-		}
-		&::after {
-			bottom: 10px;
-		}
-	}
-	span {
-		opacity: 0;
-	}
-}
 
 
 .fixed-menu {
@@ -148,11 +171,36 @@
 	&.opened {
 		transform: scale(1);
 		opacity: 1;
+		transform-origin: left center;
+	}
+	&.slided {
+		transform: scaleY(1) scaleX(0.5) rotateY(50deg);
+		transform-origin: left;
+		opacity: 1;
+		.menu {
+			transform: scaleY(2) scaleX(5) translateY(-10%) rotateY(-50deg);
+			li {
+				opacity: 0;
+				transform: scale(0);
+				&.projects {
+					opacity: 1;
+					transform: scale(1);
+					a {
+						border-bottom-color: transparent;
+					}
+				}
+			}
+		}
+	}
+	.menu {
+		transition: inherit;
 	}
 	li {
+		transition: inherit;
 		margin: 1rem 0;
 		font-size: 2em;
 		a {
+			transition: inherit;
 			text-decoration: none;
 			border-bottom: 1px solid rgba(255,255,255,.3);
 		}

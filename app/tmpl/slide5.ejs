@@ -7,88 +7,12 @@
 								<h2 class="title red-dot">Инструменты</h2>
 						</div>
 						<ul class="list">
+							<% data.tools.forEach(function(tool) { %>
 								<li class="item">
-										<span class="text">#Viewability</span>
-										<span class="text-hover">
-												Метрика, отслеживающая, появляется ли хотя бы половина
-												объявления в видимой части окна браузера непрерывно в
-												течение по крайней мере одной секунды.
-										</span>
+									<span class="text">#<%=tool.name%></span>
+									<span class="text-hover">#<%=tool.description%></span>
 								</li>
-								<li class="item">
-										<span class="text">#Динамические креативы</span>
-										<span class="text-hover">
-												Персонализированные баннеры для каждой группы целевой
-												аудитории, меняющиеся в зависимости от их поведения
-												и/или предпочтений.
-										</span>
-								</li>
-								<li class="item">
-										<span class="text">#Кастомные сегменты</span>
-										<span class="text-hover">
-												Построение уникальных и специфических сегментов аудитории под
-												конкретного рекламодателя / рекламную кампанию / продукт.
-										</span>
-								</li>
-								<li class="item">
-										<span class="text">#Контекстный таргетинг</span>
-										<span class="text-hover">
-												Работает с контекстом окружения рекламного места на основе
-												анализа семантики страницы. Демонстрация креативов происходит
-												на площадках, где встречаются заранее подобранные ключевые слова.
-										</span>
-								</li>
-								<li class="item">
-										<span class="text">#Brand Safety</span>
-										<span class="text-hover">
-												Защита бренда и его рекламных материаловот неблагоприятного информационного окружения.
-										</span>
-								</li>
-								<li class="item">
-										<span class="text">#Programmatic стратегии</span>
-										<span class="text-hover"></span>
-								</li>
-								<li class="item">
-										<span class="text">#Ретаргетинг</span>
-										<span class="text-hover">
-												Персонализированное обращение через баннеры к пользователям,
-												которые уже просмотрели рекламируемый продукт, посетив сайт рекламодателя.
-										</span>
-								</li>
-								<li class="item">
-										<span class="text">#Look-alike</span>
-										<span class="text-hover">
-												Таргетинг, благодаря которому товар или услугу предлагают пользователям,
-												по многим показателям похожим на существующих клиентов рекламодателя.
-										</span>
-								</li>
-								<li class="item">
-										<span class="text">#Статистика Real-time</span>
-										<span class="text-hover">
-												Доступ к статистике показов в режиме реального времени.
-										</span>
-								</li>
-								<li class="item">
-										<span class="text">#Оптимизация по CPM, CPC, CPA, CPQV, CPnBV, CPS</span>
-										<span class="text-hover">
-												Оптимизация рекламной кампании на достижение заданных рекламодателем
-												показателей – стоимость сеанса, стоимость целевого действия и др.
-										</span>
-								</li>
-								<li class="item">
-										<span class="text">#TV Sync</span>
-										<span class="text-hover">
-												Технология единовременной и ситуативной синхронизации
-												показов интернет-рекламы с событиями на ТВ.
-										</span>
-								</li>
-								<li class="item">
-										<span class="text">#Brand lift / Purchase intent lift</span>
-										<span class="text-hover">
-												Оценка уровня влияния интернет рекламы на рост
-												узнаваемости или лояльности к бренду.
-										</span>
-								</li>
+							<% }); %>
 						</ul>
 				</div>
 		</div>

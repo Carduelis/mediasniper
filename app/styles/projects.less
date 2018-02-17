@@ -1,0 +1,36 @@
+.projects-page {
+	position: fixed;
+	z-index: 2;
+	background-color: @white-text;
+	top: 0;
+	left: 0;
+	right: 0;
+	opacity: 1 !important; // loading fix
+	bottom: 0;
+	transform: translateX(100%);
+	transition: all 300ms;
+	&.opened {
+		transform: translateX(0);
+	}
+	.wrapper {
+		padding: @header-height @side-margin @header-height 50%;
+		overflow-y: auto;
+		height: 100%;
+		li {
+			margin-bottom: 4rem;
+			padding-bottom: 1rem;
+			border-bottom: 1px solid rgba(0,0,0,.2);
+		}
+	}
+
+	li {
+
+	}
+}
+
+.project-photo {
+	background-image: linear-gradient(to right, lightblue , lightgreen);
+	max-width: 24rem;
+	margin: 2rem 0;
+	height: 10rem;
+}

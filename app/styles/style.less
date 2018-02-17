@@ -7,12 +7,24 @@ html {
 	@media (max-width: 1100px) {
 		font-size: 14px;
 	}
-	@media (max-width: 2000px) {
-		font-size: 18px;
+	@media (min-width: 1910px) {
+		font-size: 20px;
 	}
-	@media (max-height: 800px) {
-		font-size: 13px;
+	@media (max-height: 1000px) {
+		font-size: 16px;
 	}
+	@media (max-height: 700px) {
+		font-size: 14px;
+	}
+}
+html, body {
+	height: 100%;
+}
+#fullpage {
+	display: none;
+}
+.fp-enabled #fullpage {
+	display: block;
 }
 .reset {
 	margin: 0;
@@ -21,40 +33,6 @@ html {
 	color: inherit;
 	background-color: inherit;
 }
-//
-// .section[data-anchor='slide08'],
-// .section[data-anchor='slide07'] {
-// 	background-color: @accent-grey;
-// 	[data-paralax-cover-js] {
-// 		&::before {
-// 			position: absolute;
-// 			top: 0;
-// 			left: 50%;
-// 			background-color: #fff;
-// 			width: 10rem;
-// 			height: 10rem;
-// 			margin-top: -5rem;
-// 			top: 50%;
-// 			display: flex;
-// 			align-items: center;
-// 			justify-content: center;
-// 			font-size: 3em;
-// 			padding: 1rem;
-// 			margin-left: -5rem;
-// 			content: 'Under construction';
-// 			.exo;
-// 		}
-// 	}
-// 	.content {
-// 		opacity: 0;
-// 	}
-// 	[data-paralax-cover-js] {
-// 		&::before {
-// 			color: @white-text;
-// 			background-color: @black-text;
-// 		}
-// 	}
-// }
 
 .mockup {
 	position: absolute;
@@ -88,6 +66,7 @@ body:hover {
 body {
 	padding: 0;
 	margin: 0;
+	perspective: 1857px;
 }
 
 html,
@@ -125,13 +104,13 @@ h6 {
 }
 .title,
 .h1 {
-	line-height: 1.25em;
-	letter-spacing: 0.081em;
+	line-height: 1.27em;
+	letter-spacing: @letterSpacing;
 	font-size: 4.2em;
 }
 .h2 {
-	line-height: 1.25em;
-	letter-spacing: 0.081em;
+	line-height: 1.27em;
+	letter-spacing: @letterSpacing;
 	font-size: 3em;
 }
 a,
@@ -164,6 +143,14 @@ p {
 	bottom: 1rem;
 	left: 50%;
 	margin-left: -@size/2;
+	div {
+		animation-name: scrollShaking;
+		animation-duration: 3s;
+		animation-fill-mode: both;
+		animation-delay: 1s;
+		animation-timing-function: ease-in-out;
+		animation-iteration-count: infinite;
+	}
 	a {
 		display: block;
 		margin: auto;
@@ -175,6 +162,10 @@ p {
 		align-items: center;
 		justify-content: center;
 		text-decoration: none;
+		span {
+			display: block;
+			margin-top: 0.5rem;
+		}
 	}
 }
 
@@ -258,6 +249,9 @@ p {
 		display: flex;
 		justify-content: space-between;
 		flex-direction: column;
+		@media (max-height: 1000px) {
+			padding-top: 0;
+		}
 	}
 	> .content-alt {
 		max-width: 1600px;
@@ -291,6 +285,7 @@ p {
 	}
 }
 
+@import './screens.less';
 @import './ui.less';
 @import './nav.less';
 @import './socio.less';
@@ -304,3 +299,5 @@ p {
 @import './slide06.less';
 @import './slide07.less';
 @import './slide08.less';
+
+@import './projects.less';
