@@ -1,0 +1,52 @@
+.video-fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	transition: 300ms all;
+	will-change: transform;
+	transform: scale(.5) translateX(-200%);
+	bottom: 0;
+	opacity: 0;
+	z-index: 99;
+	&.opened {
+		opacity: 1;
+		transform: scale(1) translateX(0);
+	}
+	background-color: rgba(0,0,0,.6);
+	&::after {
+		position: absolute;
+		left: 0;
+		content: 'loading the video...';
+		top: 0;
+		bottom:0;
+		right: 0;
+		z-index: 1;
+		color: @white-text;
+		font-family: monospace;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.video-header {
+		position: relative;
+		z-index: 3;
+
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		padding: @side-margin-small/2 @side-margin-small;
+	}
+	.menu-button {
+		margin: 0;
+		color: black;
+	}
+	iframe {
+		z-index: 2;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		left: 0;
+		height: 100%;
+	}
+}

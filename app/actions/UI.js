@@ -19,7 +19,7 @@ const map = {
 	menu: '.fixed-menu',
 	sideNav: '.menu',
 	header: '.fixed-header',
-	menuButton: '.menu-button',
+	menuButton: '#mainMenuButton',
 	socio: '.socio-networks',
 	projectPage: '.projects-page'
 }

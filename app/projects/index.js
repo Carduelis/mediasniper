@@ -4,7 +4,9 @@ import { UI, setMenuAs } from '../actions';
 function initialize() {
 	const ui = new UI();
 	setMenuAs({ opened: true });
-	setMenuAs({ slided: true });
+	setTimeout(()=>{
+		setMenuAs({ slided: true });
+	}, 150);
 
 	ui.get('menuButton').on('click', function() {
 		const $btn = $(this);
