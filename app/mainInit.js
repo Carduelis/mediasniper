@@ -11,10 +11,10 @@ export default function(path) {
 		}
 	});
 
-	$('.video-link').on('click', function() {
-		$('.video-fixed').addClass('opened');
+	ui.get('videoButton').on('click', function() {
+		ui.get('videoFixed').addClass('opened');
 	});
-	$('.video-fixed').on('click', function() {
-		$('.video-fixed').removeClass('opened');
+	ui.get('videoCloseButton').on('click', function() {
+		ui.get('videoFixed').removeClass('opened');
 	});
 }

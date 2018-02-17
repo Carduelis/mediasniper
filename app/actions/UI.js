@@ -21,7 +21,10 @@ const map = {
 	header: '.fixed-header',
 	menuButton: '#mainMenuButton',
 	socio: '.socio-networks',
-	projectPage: '.projects-page'
+	projectPage: '.projects-page',
+	videoButton: '.video-link',
+	videoCloseButton: '.video-fixed button',
+	videoFixed: '.video-fixed'
 }
 
 export { UI }

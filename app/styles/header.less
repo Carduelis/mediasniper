@@ -57,9 +57,22 @@
 	z-index: 10;
 	background-color: @black-text;
 	color: @white-text;
+	background-position: center;
+	background-size: cover;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	&::after {
+		content: '';
+		top: 0;
+		left: 0;
+		display: block;
+		right: 0;
+		bottom: 0;
+		position: absolute;
+		z-index: 1;
+		background-color: rgba(0,0,0,.9);
+	}
 	&.opened {
 		transform: scale(1);
 		opacity: 1;
@@ -86,6 +99,8 @@
 	}
 	.menu {
 		transition: inherit;
+		position: relative;
+		z-index: 2;
 	}
 	li {
 		margin: 1rem 0;
