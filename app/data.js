@@ -86,10 +86,6 @@ module.exports = {
 			link: "http://forex.finam.ru",
 			image: "./assets/clients/finam.png"
 		}, {
-			name: "Лада",
-			link: "http://www.lada.ru/cars/vesta/sedan",
-			image: "./assets/clients/lada.png"
-		}, {
 			name: "Bosch",
 			link: "http://www.bosch-home.ru",
 			image: "./assets/clients/Bosch.png"
@@ -169,6 +165,10 @@ module.exports = {
 			name: "Lexus",
 			link: "http://www.lexus.ru",
 			image: "./assets/clients/Lexus_logo.png"
+		}, {
+			name: "Лада",
+			link: "http://www.lada.ru/cars/vesta/sedan",
+			image: "./assets/clients/lada.png"
 		}
 	],
 	tools: [
@@ -204,5 +204,24 @@ module.exports = {
 			description: 'Оценка уровня влияния интернет рекламы на рост узнаваемости или лояльности к бренду.'
 		}
 
+	],
+	projects: [
+		{
+			name: 'Nissan Murano',
+			image: './assets/cases/murano.jpg',
+			description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+		},{
+			name: 'Infinity',
+			image: './assets/cases/infinity.jpg',
+			description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+		},{
+			name: 'IMHO',
+			image: './assets/cases/horse.jpg',
+			description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+		},{
+			name: 'Adrenalin Rush',
+			image: './assets/cases/adrenalin.jpg',
+			description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+		},
 	]
 };
