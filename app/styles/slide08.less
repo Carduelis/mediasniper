@@ -9,6 +9,9 @@ section[data-slide='08'] {
 	.content {
 		display: flex;
 		flex-direction: row;
+		@media (max-width: @bp) {
+			flex-direction: column;
+		}
 	}
 	.contact-us {
 		padding: 2rem 0;
@@ -49,5 +52,10 @@ section[data-slide='08'] {
 		align-self: center;
 		margin-bottom: 0;
 		font-size: 1.2em;
+
+		@media (max-width: @bp) {
+			align-self: flex-start;
+			margin-top: 20vh;
+		}
 	}
 }

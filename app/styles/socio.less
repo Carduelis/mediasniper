@@ -7,7 +7,10 @@
 	display: flex;
 	flex-direction: column;
 	@size: 2rem;
-	width: 4rem;
+	width: @size*2;
+	@media (max-width: @bp) {
+		margin-right: -@size;
+	}
 	align-items: center;
 	justify-content: center;
 	path {

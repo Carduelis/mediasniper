@@ -19,10 +19,40 @@ html {
 }
 html, body {
 	height: 100%;
+	@media (max-width: @bp) {
+		height: auto;
+		overflow-x: hidden;
+	}
 }
 #fullpage {
 	display: none;
+	@media (max-width: @bp) {
+		display: block;
+	}
 }
+.only-mobile() {
+	display: block;
+	@media (min-width: @bp) {
+		display: none;
+	}
+}
+
+.only-desktop() {
+	display: block;
+	@media (max-width: @bp) {
+		display: none;
+	}
+}
+
+.only-desktop {
+	.only-desktop();
+}
+
+.only-mobile {
+	.only-mobile();
+}
+
+
 .fp-enabled #fullpage {
 	display: block;
 }
@@ -66,7 +96,10 @@ body:hover {
 body {
 	padding: 0;
 	margin: 0;
-	perspective: 1857px;
+	@media (min-width: @bp) {
+		// breaks fixed-elements
+		perspective: 1857px;
+	}
 }
 
 html,
@@ -107,6 +140,9 @@ h6 {
 	line-height: 1.27em;
 	letter-spacing: @letterSpacing;
 	font-size: 4.2em;
+	@media (max-width: @bp) {
+		font-size: 2.5em;
+	}
 }
 .h2 {
 	line-height: 1.27em;
@@ -136,6 +172,18 @@ p {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	@media (max-width: @bp) {
+		min-height: 100vh;
+		> .media-section-v {
+			min-height: 100vh;
+			width: 100%;
+		}
+	}
+	&.only-desktop {
+		@media (max-width: @bp) {
+			display: none;
+		}
+	}
 }
 .scroll {
 	position: fixed;
@@ -236,6 +284,13 @@ p {
 		margin-left: @side-margin/3*2;
 		margin-right: @side-margin-small*1.5;
 	}
+
+	@media (max-width: @bp) {
+		margin: 0;
+		padding: @header-height @side-margin-small;
+		// заголовки чтобы были всегда сверху
+		height: 100vh;
+	}
 	position: relative;
 	z-index: 2;
 	> .content {
@@ -252,6 +307,15 @@ p {
 		@media (max-height: 1000px) {
 			padding-top: 0;
 		}
+		@media (max-width: @bp) {
+			width: 100%;
+			min-width: 0;
+			height: auto;
+			// заголовки чтобы были всегда сверху
+			height: 100%;
+			padding: 0.5rem;
+			max-height: none;
+		}
 	}
 	> .content-alt {
 		max-width: 1600px;
@@ -264,6 +328,7 @@ p {
 }
 
 .slide-background {
+	z-index: 1;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -285,6 +350,23 @@ p {
 	}
 }
 
+.media-section-v {
+	@media (max-width: @bp) {
+		// position: relative;
+		// height: 100vh;
+		overflow: hidden;
+	}
+}
+@media (max-width: @bp) {
+	#fullpage,
+	#fullpage > div,
+	#fullpage > div > div {
+		display: block !important;
+		height: 100vh !important;
+
+	}
+
+}
 @import './screens.less';
 @import './ui.less';
 @import './button.less';

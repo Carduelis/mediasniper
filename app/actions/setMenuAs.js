@@ -4,6 +4,22 @@ import { slides } from '../data';
 
 const setMenuAs = ({ opened, slided }) => {
 	const ui = new UI();
+	console.log(`opened: ${opened}; slided: ${slided}`);
+	if (slided === true) {
+		ui.get('menuButton').attr('data-state', 'arrow');
+		ui.get('menu').addClass('slided');
+		setColors({ header: 'black' });
+		ui.get('logo').addClass('fadeout');
+
+		ui.get('projectPage').addClass('opened');
+	}
+	if (slided === false) {
+		ui.get('menuButton').attr('data-state','close');
+		ui.get('menu').removeClass('slided');
+		ui.get('logo').removeClass('fadeout');
+
+		ui.get('projectPage').removeClass('opened');
+	}
 	if (opened === false) {
 		if ($.fn.fullpage.setAllowScrolling) {
 			console.log('allow scrolling');
@@ -11,7 +27,6 @@ const setMenuAs = ({ opened, slided }) => {
 		} else {
 			console.log('could not allow scrolling');
 		}
-		console.log('opened===false')
 		ui.get('menu').removeClass('opened');
 		ui.get('menuButton').removeAttr('data-state');
 		let color = 'white';
@@ -30,25 +45,9 @@ const setMenuAs = ({ opened, slided }) => {
 		} else {
 			console.log('could not disallow scrolling');
 		}
-		console.log('opened===true')
 		ui.get('menu').addClass('opened');
 		ui.get('menuButton').attr('data-state','close');
 		ui.get('header').attr('data-color', 'white');
-	}
-	if (slided === true) {
-		ui.get('menuButton').attr('data-state', 'arrow');
-		ui.get('menu').addClass('slided');
-		setColors({ header: 'black' });
-		ui.get('logo').addClass('fadeout');
-
-		ui.get('projectPage').addClass('opened');
-	}
-	if (slided === false) {
-		ui.get('menuButton').attr('data-state','close');
-		ui.get('menu').removeClass('slided');
-		ui.get('logo').removeClass('fadeout');
-
-		ui.get('projectPage').removeClass('opened');
 	}
 }
 

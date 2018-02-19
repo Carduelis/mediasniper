@@ -6,6 +6,10 @@ section[data-slide='03'] {
 	.body-shift() {
 		position: relative;
 		top: -3em;
+		@media (max-width: @bp) {
+			top: 0;
+			margin-top: 1rem;
+		}
 	}
 	.video-shift() {
 		position: relative;
@@ -21,13 +25,17 @@ section[data-slide='03'] {
 	.body {
 		.body-shift();
 		margin: 0 -2.5rem;
-		.list {
-			display: flex;
+		.flex-scroll {
+			// display: flex;
 			text-align: center;
 			justify-content: space-between;
 		}
 		.item {
-			flex-basis: 12rem;
+			flex-basis: 12em;
+			@media (max-width: @bp) {
+				flex-shrink: 0;
+				flex-basis: 10rem;
+			}
 			display: flex;
 			flex-direction: column;
 		}
@@ -66,16 +74,34 @@ section[data-slide='03'] {
 	}
 	.footer {
 		align-self: flex-end;
+		@media (max-width: @bp) {
+			margin-right: auto;
+		}
 	}
 	.footer-info {
 		display: flex;
 		align-items: flex-end;
+		text-align: right;
+		@media (max-width: @bp) {
+			flex-direction: column;
+			text-align: left;
+			align-items: flex-start;
+			// max-width: 14rem;
+		}
 	}
 	.footer-info-text {
-		text-align: right;
+		text-align: inherit;
 		line-height: 1.6em;
+		margin-bottom: 1rem;
 		margin-right: 1rem;
 	}
 	.footer-info-img {
+		width: 100%;
+		@media (max-width: @bp) {
+			max-width: 12rem;
+		}
+		img {
+			width: 100%;
+		}
 	}
 }

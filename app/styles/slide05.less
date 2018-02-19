@@ -56,6 +56,9 @@ section[data-slide='05'] {
 		.text {
 			transition: inherit;
 			white-space: nowrap;
+			@media (max-width: @bp) {
+				white-space: normal;
+			}
 			cursor: pointer;
 			padding: @inner @inner*1.5;
 			background-color: @accent-grey-05;

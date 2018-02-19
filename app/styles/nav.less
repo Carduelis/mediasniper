@@ -12,12 +12,41 @@
 	margin-left: -@space/2;
 	@fontsize: 1rem;
 	@numbersWidth: @fontsize*1.1;
+	@media (max-width: @bp) {
+		margin-left: 0;
+	}
 	.menu {
 		font-size: @fontsize;
 		position: relative;
 		margin-left: 1rem;
 		margin-top: @header-height/2;
 		color: @white-text;
+		@media (max-width: @bp) {
+			margin-top: 0;
+			margin-bottom: 0;
+			height: 100%;
+			// filter: blur(2px);
+			margin-left: 0;
+			justify-content: space-around;
+			display: flex;
+			flex-direction: column;
+			.info-number,
+			.info-title {
+				display: none;
+			}
+			&::after {
+				opacity: .6;
+				left: .75rem !important;
+			}
+			.info::before {
+				opacity: .6;
+				left: .75rem !important;
+			}
+			.active .info::before {
+				opacity: 1;
+				color: red;
+			}
+		}
 		&[data-color='white'] {
 			color: @white-text;
 		}

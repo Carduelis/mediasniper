@@ -8,6 +8,9 @@ section[data-slide='06'] {
 		.columns {
 			flex-basis: 100%;
 			display: flex;
+			@media (max-width: @bp) {
+				flex-direction: column;
+			}
 		}
 		.headers-block {
 			flex-grow: 1;
@@ -17,6 +20,10 @@ section[data-slide='06'] {
 			flex-direction: column;
 			justify-content: center;
 			max-width: 20em;
+			@media (max-width: @bp) {
+				max-width: auto;
+				margin-right: 0;
+			}
 			.title {
 				margin-top: auto;
 				font-size: 1.5em;
@@ -32,6 +39,11 @@ section[data-slide='06'] {
 			flex-shrink: 0;
 			flex-basis: 50%;
 			align-self: flex-end;
+			@media (max-width: @bp) {
+				flex-basis: auto;
+				margin-top: @side-margin-small;
+
+			}
 			ul {
 				padding-left: 2em;
 			}
