@@ -192,6 +192,96 @@ module.exports = {
 			name: "Лада",
 			link: "http://www.lada.ru/cars/vesta/sedan",
 			image: "./assets/clients/lada.png"
+		},
+		{
+			name: "lg",
+			link: "",
+			image: "lg.png"
+		},
+		{
+			name: "libero_logo",
+			link: "",
+			image: "libero_logo.png"
+		},
+		{
+			name: "libresse",
+			link: "",
+			image: "libresse.png"
+		},
+		{
+			name: "lukoil",
+			link: "",
+			image: "lukoil.png"
+		},
+		{
+			name: "logo-mcdonalds",
+			link: "",
+			image: "logo-mcdonalds.png"
+		},
+		{
+			name: "logo-megafon",
+			link: "",
+			image: "logo-megafon.png"
+		},
+		{
+			name: "crizal-logo",
+			link: "",
+			image: "crizal-logo.png"
+		},
+		{
+			name: "mediaMarkt",
+			link: "",
+			image: "mediaMarkt.svg"
+		},
+		{
+			name: "nissan",
+			link: "",
+			image: "nissan.png"
+		},
+		{
+			name: "logo-yves-rocher",
+			link: "",
+			image: "logo-yves-rocher.svg"
+		},
+		{
+			name: "rush",
+			link: "",
+			image: "rush.png"
+		},
+		{
+			name: "logo-agusha",
+			link: "",
+			image: "logo-agusha.png"
+		},
+		{
+			name: "Mid_products_lays",
+			link: "",
+			image: "Mid_products_lays.png"
+		},
+		{
+			name: "lipton_logo_bw",
+			link: "",
+			image: "lipton_logo_bw.png"
+		},
+		{
+			name: "renault",
+			link: "",
+			image: "renault.png"
+		},
+		{
+			name: "volkswagen",
+			link: "",
+			image: "volkswagen.jpg"
+		},
+		{
+			name: "qiwi",
+			link: "",
+			image: "qiwi.png"
+		},
+		{
+			name: "mitsubishi",
+			link: "",
+			image: "mitsubishi.png"
 		}
 	],
 	tools: [
