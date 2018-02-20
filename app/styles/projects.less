@@ -30,6 +30,13 @@
 
 	.wrapper {
 		padding: @header-height @side-margin @header-height 50%;
+		@media (max-width: @bp) {
+			padding-left: @side-margin;
+		}
+		@media (max-width: 520px) {
+			padding-left: @side-margin-small;
+			padding-right: @side-margin-small;
+		}
 		overflow-y: auto;
 		height: 100%;
 		li {
@@ -38,6 +45,17 @@
 			border-bottom: 1px solid rgba(0, 0, 0, .2);
 			.fullscreen {
 				display: none;
+				max-width: 1400px;
+				margin: 0 auto;
+				.title {
+					margin-bottom: @side-margin-small;
+				}
+				.project-picture {
+					margin: @side-margin-small/2 0;
+					img {
+						width: 100%;
+					}
+				}
 			}
 			&[data-state="fullscreen"] {
 				.link {

@@ -17,7 +17,8 @@ html {
 		font-size: 14px;
 	}
 }
-html, body {
+html,
+body {
 	height: 100%;
 	@media (max-width: @bp) {
 		height: auto;
@@ -51,7 +52,6 @@ html, body {
 .only-mobile {
 	.only-mobile();
 }
-
 
 .fp-enabled #fullpage {
 	display: block;
@@ -247,7 +247,7 @@ p {
 	padding: 1rem 2rem;
 	background-position: 0 50%;
 	background-size: contain;
-	max-width:  @heading-back-max-width;
+	max-width: @heading-back-max-width;
 	height: @heading-back-height;
 	flex-shrink: 0;
 	// margin-bottom: 2rem;
@@ -268,11 +268,11 @@ p {
 		display: block;
 	}
 	.title {
-			position: relative;
-			z-index: 2;
-			font-size: 2em;
-			margin: 0;
-		}
+		position: relative;
+		z-index: 2;
+		font-size: 2em;
+		margin: 0;
+	}
 }
 
 .main-block {
@@ -290,6 +290,9 @@ p {
 		padding: @header-height @side-margin-small;
 		// заголовки чтобы были всегда сверху
 		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 	position: relative;
 	z-index: 2;
@@ -314,7 +317,6 @@ p {
 			// заголовки чтобы были всегда сверху
 			height: 100%;
 			padding: 0;
-			max-height: none;
 		}
 	}
 	> .content-alt {
@@ -324,6 +326,10 @@ p {
 		padding-top: 0;
 		width: 80%;
 		min-width: 40rem;
+		@media (max-width: @bp) {
+			width: 100%;
+			margin-right: 0;
+		}
 	}
 }
 
@@ -363,9 +369,7 @@ p {
 	#fullpage > div > div {
 		display: block !important;
 		height: 100vh !important;
-
 	}
-
 }
 @import './screens.less';
 @import './ui.less';

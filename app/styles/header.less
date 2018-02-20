@@ -98,6 +98,9 @@
 		transform: scaleY(1) scaleX(0.5) rotateY(50deg);
 		transform-origin: left;
 		opacity: 1;
+		@media (max-width: @bp) {
+			transform: translateX(-100%) !important;
+		}
 		&.fully-slided {
 			transform: scaleY(1) scaleX(0.5) rotateY(150deg);
 		}
