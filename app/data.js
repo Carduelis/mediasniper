@@ -1,4 +1,4 @@
-module.exports = {
+﻿module.exports = {
 	slides: [
 		{
 			titleId: "01",
@@ -195,92 +195,82 @@ module.exports = {
 		},
 		{
 			name: "lg",
-			link: "",
+			link: "http://www.lg.com/ru",
 			image: "lg.png"
 		},
 		{
 			name: "libero_logo",
-			link: "",
+			link: "https://libero.promo/",
 			image: "libero_logo.png"
 		},
 		{
-			name: "libresse",
-			link: "",
-			image: "libresse.png"
-		},
-		{
 			name: "lukoil",
-			link: "",
+			link: "http://www.lukoil.ru/",
 			image: "lukoil.png"
 		},
 		{
 			name: "logo-mcdonalds",
-			link: "",
+			link: "https://mcdonalds.ru/",
 			image: "logo-mcdonalds.png"
 		},
 		{
 			name: "logo-megafon",
-			link: "",
+			link: "https://megafon.domru.ru/nsk",
 			image: "logo-megafon.png"
 		},
 		{
 			name: "crizal-logo",
-			link: "",
+			link: "https://crizal.ru/",
 			image: "crizal-logo.png"
 		},
 		{
 			name: "mediaMarkt",
-			link: "",
+			link: "https://www.mediamarkt.ru/",
 			image: "mediaMarkt.svg"
 		},
 		{
 			name: "nissan",
-			link: "",
+			link: "https://www.nissan.ru/",
 			image: "nissan.png"
 		},
 		{
 			name: "logo-yves-rocher",
-			link: "",
+			link: "https://www.yves-rocher.ru/",
 			image: "logo-yves-rocher.svg"
 		},
 		{
 			name: "rush",
-			link: "",
+			link: "https://cyberleague.adrenalinerush.ru/",
 			image: "rush.png"
 		},
 		{
 			name: "logo-agusha",
-			link: "",
+			link: "https://agulife.ru/",
 			image: "logo-agusha.png"
 		},
 		{
-			name: "Mid_products_lays",
-			link: "",
-			image: "Mid_products_lays.png"
-		},
-		{
 			name: "lipton_logo_bw",
-			link: "",
+			link: "https://www.lipton.com/ru/home.html",
 			image: "lipton_logo_bw.png"
 		},
 		{
 			name: "renault",
-			link: "",
+			link: "https://www.renault.ru/",
 			image: "renault.png"
 		},
 		{
 			name: "volkswagen",
-			link: "",
+			link: "https://www.volkswagen.ru/ru.html",
 			image: "volkswagen.jpg"
 		},
 		{
 			name: "qiwi",
-			link: "",
+			link: "https://qiwi.com/",
 			image: "qiwi.png"
 		},
 		{
 			name: "mitsubishi",
-			link: "",
+			link: "https://www.mitsubishi.ru/",
 			image: "mitsubishi.png"
 		}
 	],
