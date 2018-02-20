@@ -27,9 +27,9 @@ body {
 }
 #fullpage {
 	display: none;
-	@media (max-width: @bp) {
-		display: block;
-	}
+	// @media (max-width: @bp) {
+	// 	display: block;
+	// }
 }
 .only-mobile() {
 	display: block;
@@ -364,11 +364,13 @@ p {
 	}
 }
 @media (max-width: @bp) {
-	#fullpage,
-	#fullpage > div,
-	#fullpage > div > div {
-		display: block !important;
-		height: 100vh !important;
+	.fp-enabled {
+		#fullpage,
+		#fullpage > div,
+		#fullpage > div > div {
+			display: block !important;
+			height: 100vh !important;
+		}
 	}
 }
 @import './screens.less';
