@@ -87,7 +87,7 @@
 		bottom: 0;
 		position: absolute;
 		z-index: 1;
-		background-color: rgba(0,0,0,.9);
+		background-color: rgba(0, 0, 0, .9);
 	}
 	&.opened {
 		transform: scale(1);
@@ -98,6 +98,9 @@
 		transform: scaleY(1) scaleX(0.5) rotateY(50deg);
 		transform-origin: left;
 		opacity: 1;
+		&.fully-slided {
+			transform: scaleY(1) scaleX(0.5) rotateY(150deg);
+		}
 		.menu {
 			transform: scaleY(2) scaleX(5) translateY(-10%) rotateY(-50deg);
 			li {
@@ -123,7 +126,7 @@
 		font-size: 2em;
 		a {
 			text-decoration: none;
-			border-bottom: 1px solid rgba(255,255,255,.3);
+			border-bottom: 1px solid rgba(255, 255, 255, .3);
 		}
 	}
 }

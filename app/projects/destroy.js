@@ -1,8 +1,10 @@
-import $ from 'jquery';
-import { UI, setMenuAs } from '../actions';
+import $ from "jquery";
+import { UI, setMenuAs } from "../actions";
 
-export default function () {
+export default function() {
 	const ui = new UI();
-	ui.get('menuButton').off();
-	setMenuAs({ slided: false, opened: false });
+	ui.get("menuButton").off();
+	console.log("destroy projects");
+	setMenuAs({ slided: false });
+	setMenuAs({ opened: false });
 }

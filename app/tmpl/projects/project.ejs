@@ -2,14 +2,12 @@
 	<a class="link" href="#/projects/<%=project.id%>">
 		<h2><%=project.name%></h2>
 		<div class="project-photo" style="background-image: url(<%-project.image%>);"></div>
-		<p><%= project.description %></p>
 	</a>
 	<div class="fullscreen">
 		<div class="header-substitute">
-			<button type="button" class="reset back" onclick="">Назад</button>
+			<a href="#/projects" class="reset back">К проектам</button>
 		</div>
 		<h2 class="title"><%=project.name%></h2>
-		<p><%= project.description %></p>
 		<section>
 			<% project.images && project.images.forEach(function(url){ %>
 				<div class="project-picture">
