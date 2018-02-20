@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <% var path = { favicon: "./assets/favicon"}; %>
+<% var data = require('./data.js') %>
 <html>
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
@@ -38,7 +39,6 @@
 		        <span>loading...</span>
 		    </div>
 		</div>
-		<% var data = require('./data.js') %>
     <% include app/tmpl/header.ejs %>
     <% include app/tmpl/menu.ejs %>
     <div id="uniqMenu">

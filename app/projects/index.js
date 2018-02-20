@@ -1,8 +1,7 @@
 import $ from 'jquery';
 import { UI, setMenuAs } from '../actions';
 
-function initialize() {
-	const ui = new UI();
+function initialize(ui) {
 	setMenuAs({ opened: true });
 	setTimeout(()=>{
 		setMenuAs({ slided: true });
@@ -26,8 +25,23 @@ function initialize() {
 
 
 export default function(id) {
-	initialize();
-	if (id) {
+	const ui = new UI();
+	initialize(ui);
 
+	const $projects = ui.get('projectPage').find('.project-item');
+	if (id) {
+		ui.get('projectPage').attr('data-view', 'project');
+		$projects.each(function() {
+			const $project = $(this);
+			if ($project.attr('data-id') === id) {
+				$project.attr('data-state', 'fullscreen');
+			} else {
+				$project.attr('data-state', 'hidden');
+			}
+		});
+
+		} else {
+		ui.get('projectPage').attr('data-view', 'list');
+		$projects.attr('data-state', 'item');
 	}
 }
