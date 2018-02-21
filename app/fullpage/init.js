@@ -12,6 +12,7 @@ export default function() {
 		anchors: slides.map(slide => slide.anchor),
 		// fixedElements: '.fixed',
 		menu: '#uniqMenu',
+		scrollOverflow: true,
 		onLeave(index, nextIndex, direction) {
 			console.log(`${direction} from ${index} to ${nextIndex}`);
 			console.log()

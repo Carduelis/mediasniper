@@ -10,6 +10,7 @@
   "dependencies": {
     "babel": "^6.3.26",
     "babel-polyfill": "^6.3.14",
+    "debounce": "^1.1.0",
     "director": "^1.2.8",
     "fullpage.js": "^2.9.6",
     "jquery": "^3.3.1",

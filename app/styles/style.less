@@ -2,181 +2,28 @@
 @import '../../node_modules/fullpage.js/dist/jquery.fullPage.css';
 // get the page ready
 @import './variables.less';
-html {
-	font-size: 16px;
-	@media (max-width: 1100px) {
-		font-size: 14px;
-	}
-	@media (min-width: 1910px) {
-		font-size: 20px;
-	}
-	@media (max-height: 1000px) {
-		font-size: 16px;
-	}
-	@media (max-height: 700px) {
-		font-size: 14px;
-	}
-}
-html,
-body {
-	height: 100%;
-	@media (max-width: @bp) {
-		height: auto;
-		overflow-x: hidden;
-	}
-}
+@import './base.less';
+
 #fullpage {
 	display: none;
 	// @media (max-width: @bp) {
 	// 	display: block;
 	// }
-}
-.only-mobile() {
-	display: block;
-	@media (min-width: @bp) {
-		display: none;
+	&.mobile {
+		display: block;
 	}
 }
 
-.only-desktop() {
-	display: block;
-	@media (max-width: @bp) {
-		display: none;
-	}
-}
-
-.only-desktop {
-	.only-desktop();
-}
-
-.only-mobile {
-	.only-mobile();
-}
-
-.fp-enabled #fullpage {
-	display: block;
-}
-.reset {
-	margin: 0;
-	padding: 0;
-	border: none;
-	color: inherit;
-	background-color: inherit;
-}
-
-.mockup {
-	position: absolute;
-	top: 0;
-	display: none;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 100;
-	background-color: #fff;
-	background-position: center;
-	background-size: contain;
-	background-repeat: no-repeat;
-	opacity: 0.5;
-	transition: all 3000ms;
-}
-body:hover {
-	.mockup {
-		transform: translateX(50%);
-	}
-}
-* {
-	outline: none;
-	box-sizing: border-box;
-	&::before,
-	&::after {
-		box-sizing: border-box;
-	}
-}
-@pad: 1rem;
-body {
-	padding: 0;
-	margin: 0;
-	@media (min-width: @bp) {
-		// breaks fixed-elements
-		perspective: 1857px;
-	}
-}
-
-html,
-body,
-p,
-input {
-	letter-spacing: 0.05em;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-}
-
-ul {
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: 'Exo 2', sans-serif;
-	font-weight: 700;
-	margin: 0;
-	line-height: 1.2em;
-}
-
-.heading() {
-	font-family: 'Exo 2', sans-serif;
-	font-weight: 700;
-}
-.exo {
-	.heading();
-}
-.title,
-.h1 {
-	line-height: 1.27em;
-	letter-spacing: @letterSpacing;
-	font-size: 4.2em;
-	@media (max-width: @bp) {
-		font-size: 2.5em;
-	}
-}
-.h2 {
-	line-height: 1.27em;
-	letter-spacing: @letterSpacing;
-	font-size: 3em;
-}
-a,
-button {
-	font-family: 'Exo 2', sans-serif;
-	font-weight: 100;
-}
-a {
-	color: inherit;
-	&[disabled] {
-		opacity: .8;
-		cursor: not-allowed;
-	}
-	&:visited {
-		color: inherit;
-	}
-}
-p {
-	line-height: 1.6em;
-}
 .section {
 	background-color: #eee;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	@media (max-width: @bp) {
-		min-height: 100vh;
+		position: relative;
 		> .media-section-v {
-			min-height: 100vh;
-			width: 100%;
+			// min-height: 100vh;
+			// width: 100%;
 		}
 	}
 	&.only-desktop {
@@ -216,65 +63,6 @@ p {
 		}
 	}
 }
-
-.white-strip {
-	position: relative;
-	display: inline-block;
-	&::before {
-		content: '';
-		position: absolute;
-		width: 4em;
-		height: 0.4em;
-		background-color: #fff;
-		z-index: -1;
-		bottom: 0;
-		left: -0.75em;
-	}
-}
-
-.red-text {
-	color: @accent-red;
-}
-
-.red-dot {
-	&::after {
-		content: '.';
-		color: @accent-red;
-	}
-}
-.header-back {
-	margin-top: auto;
-	padding: 1rem 2rem;
-	background-position: 0 50%;
-	background-size: contain;
-	max-width: @heading-back-max-width;
-	height: @heading-back-height;
-	flex-shrink: 0;
-	// margin-bottom: 2rem;
-	display: flex;
-	align-items: flex-end;
-	position: relative;
-	justify-content: flex-start;
-	background-repeat: no-repeat;
-	background-color: #070707; // as the image
-	&::after {
-		content: '';
-		background-color: rgba(0, 0, 0, 0.7);
-		position: absolute;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		display: block;
-	}
-	.title {
-		position: relative;
-		z-index: 2;
-		font-size: 2em;
-		margin: 0;
-	}
-}
-
 .main-block {
 	margin: 0 @side-margin;
 	@media (max-width: 1366px) {
@@ -289,7 +77,7 @@ p {
 		margin: 0;
 		padding: @header-height @side-margin-small;
 		// заголовки чтобы были всегда сверху
-		height: 100vh;
+		min-height: 100vh;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;

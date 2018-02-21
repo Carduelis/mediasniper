@@ -12,14 +12,6 @@
 	}
 	@media (max-width: @bp) {
 		top: 0;
-		.main-block-alt {
-			display: flex;
-			flex-direction: column;
-			justify-content: flex-end;
-			padding-left: 0;
-			padding-bottom: @side-margin-small;
-			padding-right: 0;
-		}
 		.content-alt {
 			margin-bottom: 0;
 			position: relative;
@@ -81,7 +73,6 @@ section[data-slide^='04'] {
 	.slide-background::before {
 		background-color: @light-blue;
 	}
-
 	.slide-background-word {
 		position: absolute;
 		right: 0;
@@ -101,6 +92,22 @@ section[data-slide^='04'] {
 			animation-name: backword;
 			opacity: 1;
 		}
+		@media (max-width: @bp) {
+			background-position: right top;
+		}
+	}
+	.mobile-header {
+		position: relative;
+		z-index: 10;
+		.subtitle {
+			.title;
+		}
+	}
+	.main-block-alt {
+		@media (max-width: @bp) {
+			min-height: auto;
+			padding-bottom: 0;
+		}
 	}
 	.top-info {
 		position: absolute;
@@ -110,7 +117,12 @@ section[data-slide^='04'] {
 		width: 40%;
 		top: @header-height;
 		@media (max-width: @bp) {
+			top: 0;
+			margin-top: @side-margin-small + 0.5rem;
+			background-color: @light-blue;
 			width: auto;
+			position: relative;
+			z-index: 3;
 			left: @side-margin-small;
 		}
 	}
@@ -125,7 +137,12 @@ section[data-slide^='04'] {
 		flex-direction: column;
 		align-items: flex-start;
 		justify-content: flex-start;
+		overflow: hidden;
 		@media (max-width: @bp) {
+			position: relative;
+			z-index: 3;
+			top: 0;
+			margin-top: @side-margin-small;
 			left: @side-margin-small;
 			right: 0;
 			&::after {
@@ -147,6 +164,25 @@ section[data-slide^='04'] {
 		}
 		> div {
 			margin-left: -1rem;
+		}
+	}
+}
+
+
+section[data-slide='04-1'] {
+	.main-block-alt {
+		@media (max-width: @bp) {
+			padding-top: 0;
+			height: 20rem;
+			display: flex;
+			align-items: flex-end;
+			justify-content: flex-start;
+		}
+	}
+
+	.slide-background-word {
+		@media (max-width: @bp) {
+			background-position: right 20rem;
 		}
 	}
 }

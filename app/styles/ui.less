@@ -132,3 +132,63 @@
 		padding: 0 @side-margin-small;
 	}
 }
+
+
+.white-strip {
+	position: relative;
+	display: inline-block;
+	&::before {
+		content: '';
+		position: absolute;
+		width: 4em;
+		height: 0.4em;
+		background-color: #fff;
+		z-index: -1;
+		bottom: 0;
+		left: -0.75em;
+	}
+}
+
+.red-text {
+	color: @accent-red;
+}
+
+.red-dot {
+	&::after {
+		content: '.';
+		color: @accent-red;
+	}
+}
+
+.header-back {
+	margin-top: auto;
+	padding: 1rem 2rem;
+	background-position: 0 50%;
+	background-size: contain;
+	max-width: @heading-back-max-width;
+	height: @heading-back-height;
+	flex-shrink: 0;
+	// margin-bottom: 2rem;
+	display: flex;
+	align-items: flex-end;
+	position: relative;
+	justify-content: flex-start;
+	background-repeat: no-repeat;
+	background-color: #070707; // as the image
+	&::after {
+		content: '';
+		background-color: rgba(0, 0, 0, 0.7);
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+	.title {
+		position: relative;
+		z-index: 2;
+		font-size: 2em;
+		margin: 0;
+	}
+}

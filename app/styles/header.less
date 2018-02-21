@@ -4,6 +4,7 @@
 	width: 100%;
 	left: 0;
 	color: @white-text;
+	transition: all 200ms;
 	svg path {
 		fill: @white-text;
 	}
@@ -19,11 +20,19 @@
 		svg path {
 			fill: @black-text;
 		}
+		@media (max-width: @bp) {
+			background-color: fadeout(@white-text, 60%);
+			// border-bottom: 1px solid fadeout(@white-text, 60%);
+		}
 	}
 	&[data-color='white'] {
 		color: @white-text;
 		svg path {
 			fill: @white-text;
+		}
+		@media (max-width: @bp) {
+			background-color: fadeout(@black-text, 60%);
+			// border-bottom: 1px solid fadeout(@white-text, 60%);
 		}
 	}
 	@media (max-width: @bp) {
@@ -37,6 +46,10 @@
 	justify-content: space-between;
 	align-items: center;
 	padding: @side-margin-small/2 @side-margin-small;
+
+	@media (max-width: @bp) {
+		backdrop-filter: blur(3px);
+	}
 }
 
 .header-logo-block {
