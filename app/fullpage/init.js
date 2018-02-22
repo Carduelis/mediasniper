@@ -1,31 +1,30 @@
-import $ from 'jquery';
-import 'fullpage.js/dist/jquery.fullPage.js';
-import aliveScreenSplashes from './screenSplashes';
-import { setColors } from '../actions';
-import { reRunAnimationButton, reanimate } from '../animater';
-import { slides } from '../data';
+import $ from "jquery";
+import "fullpage.js/dist/jquery.fullPage.js";
+import { setColors, screenSplashes } from "../actions";
+import { reRunAnimationButton, reanimate } from "../animater";
+import { slides } from "../data";
 
-const SUB_SLIDE_SEPARATOR = '-';
+const SUB_SLIDE_SEPARATOR = "-";
 export default function() {
 	window.isFirstLoad = true;
-	$('#fullpage').fullpage({
+	$("#fullpage").fullpage({
 		anchors: slides.map(slide => slide.anchor),
 		// fixedElements: '.fixed',
-		menu: '#uniqMenu',
+		menu: "#uniqMenu",
 		scrollOverflow: true,
 		onLeave(index, nextIndex, direction) {
 			console.log(`${direction} from ${index} to ${nextIndex}`);
-			console.log()
+			console.log();
 			const slide = getSlideByIndex(index);
 			const nextSlide = getSlideByIndex(nextIndex);
 			// $('.menu').attr('data-color', nextSlide.color);
-			setColors(['sideNav', 'header', 'socio'], nextSlide.color);
+			setColors(["sideNav", "header", "socio"], nextSlide.color);
 
-			reRunAnimationButton(getSlideEl(nextSlide).find('.button'));
-			reanimate($('.animated'));
+			reRunAnimationButton(getSlideEl(nextSlide).find(".button"));
+			reanimate($(".animated"));
 			if (!isASubSlide(nextSlide)) {
-				$('.media-nav [data-menuanchor="slide04-1"]').removeClass('active');
-				$('.slide04').fadeOut(100);
+				$('.media-nav [data-menuanchor="slide04-1"]').removeClass("active");
+				$(".slide04").fadeOut(100);
 			}
 			window.isFirstLoad = false;
 		},
@@ -34,28 +33,28 @@ export default function() {
 			console.log(anchorLink, index, slide);
 			const $slide = getSlideEl(slide);
 			if (window.isFirstLoad) {
-				reRunAnimationButton(getSlideEl(slide).find('.button'));
-				reanimate($('.animated'));
+				reRunAnimationButton(getSlideEl(slide).find(".button"));
+				reanimate($(".animated"));
 				window.isFirstLoad = false;
 			}
-			setColors(['sideNav', 'header', 'socio'], slide.color);
-			aliveScreenSplashes($slide);
+			setColors(["sideNav", "header", "socio"], slide.color);
+			screenSplashes($slide);
 			if (isASubSlide(slide)) {
-				$('.media-nav [data-menuanchor="slide04-1"]').addClass('active');
-				$('.slide04').fadeIn(150);
+				$('.media-nav [data-menuanchor="slide04-1"]').addClass("active");
+				$(".slide04").fadeIn(150);
 			} else {
 			}
 		},
 		afterRender() {
-			console.log('render');
+			console.log("render");
 		},
 		afterResize() {
-			console.log('resize');
+			console.log("resize");
 		},
 		afterResponsive() {},
 		afterSlideLoad(anchorLink, index, slideAnchor, slideIndex) {
 			// console.log(...rest);
-			// aliveScreenSplashes($())
+			// screenSplashes($())
 		},
 		onSlideLeave(anchorLink, index, slideIndex, direction, nextSlideIndex) {
 			// wtf
@@ -64,17 +63,16 @@ export default function() {
 	});
 }
 
+const getSlideByIndex = index => slides[index - 1];
+const getSlideEl = slide => {
+	const id = slide.anchor.replace("slide", "");
+	return $(`[data-slide="${id}"]`);
+};
 
-	const getSlideByIndex = index => slides[index - 1];
-	const getSlideEl = slide => {
-		const id = slide.anchor.replace('slide', '');
-		return $(`[data-slide="${id}"]`);
-	};
-
-	const isASubSlide = slide => slide.anchor.includes(SUB_SLIDE_SEPARATOR);
-	const getSubSlideIndex = slide => {
-		if (isASubSlide(slide)) {
-			return slide.anchor.split(SUB_SLIDE_SEPARATOR)[1];
-		}
-		return false;
-	};
+const isASubSlide = slide => slide.anchor.includes(SUB_SLIDE_SEPARATOR);
+const getSubSlideIndex = slide => {
+	if (isASubSlide(slide)) {
+		return slide.anchor.split(SUB_SLIDE_SEPARATOR)[1];
+	}
+	return false;
+};
