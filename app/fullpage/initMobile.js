@@ -21,18 +21,19 @@ export default function() {
 		reRunAnimationButton($('.section').find('.button'));
 		screenSplashes($('.section'));
 	}, 500);
-	const onScroll = debounce(e => {
-		$('.section').each(function() {
-			const socioHeight = ui.get('socio').height();
-			const headerHeight = ui.get('header').height();
-			const sectionHeight = $(this).height();
-			const sectionOffsetTop = $(this).offset().top;
-			const sectionOffsetBottom = sectionHeight + sectionOffsetTop;
-			const slideId = $(this).children().attr('data-slide');
-			const $slide = ui.get('slide', slideId);
-			const windowScrollBottom = window.scrollY + window.outerHeight;
-			const slide = slides.find(slide => slide.anchor.match(slideId));
 
+	function updateSection() {
+		const socioHeight = ui.get('socio').height();
+		const headerHeight = ui.get('header').height();
+		const sectionHeight = $(this).height();
+		const sectionOffsetTop = $(this).offset().top;
+		const sectionOffsetBottom = sectionHeight + sectionOffsetTop;
+		const slideId = $(this).children().attr('data-slide');
+		const $slide = ui.get('slide', slideId);
+		const windowScrollBottom = window.scrollY + window.outerHeight;
+		const slide = slides.find(slide => slide.anchor.match(slideId));
+
+		function updateSideNavigationIndication() {
 			if (
 				sectionOffsetTop < window.scrollY &&
 				sectionOffsetBottom > window.scrollY
@@ -48,20 +49,25 @@ export default function() {
 					}
 				});
 			}
-			if (
-				windowScrollBottom > socioHeight + sectionOffsetTop &&
-				windowScrollBottom < sectionOffsetBottom
-			) {
-				setColors(['socio'], slide.color);
-			}
+		}
 
-			if (
-				window.scrollY > sectionOffsetTop - headerHeight / 2 &&
-				window.scrollY + headerHeight / 2 < sectionOffsetBottom
-			) {
-				setColors(['header'], slide.color);
-			}
-		});
+		if (
+			windowScrollBottom > socioHeight + sectionOffsetTop &&
+			windowScrollBottom < sectionOffsetBottom
+		) {
+			setColors(['socio'], slide.color);
+		}
+
+		if (
+			window.scrollY > sectionOffsetTop - headerHeight / 2 &&
+			window.scrollY + headerHeight / 2 < sectionOffsetBottom
+		) {
+			setColors(['header'], slide.color);
+		}
+	}
+
+	const onScroll = debounce(e => {
+		$('.section').each(updateSection);
 	}, 50);
 	$(window).on('scroll', onScroll);
 }

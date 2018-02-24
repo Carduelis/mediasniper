@@ -2,6 +2,9 @@ import $ from "jquery";
 import { UI, setMenuAs } from "../actions";
 
 function initialize(ui) {
+	if (ui.get('fp').hasClass('mobile')) {
+		ui.get('fp').fadeOut();
+	}
 	console.log("initialize projects");
 	setMenuAs({ opened: true });
 	setTimeout(() => {

@@ -94,6 +94,7 @@ section[data-slide^='04'] {
 		}
 		@media (max-width: @bp) {
 			background-position: right top;
+			background-size: 15rem;
 		}
 	}
 	.mobile-header {
@@ -101,6 +102,10 @@ section[data-slide^='04'] {
 		z-index: 10;
 		.subtitle {
 			.title;
+
+			@media (max-width: 380px) {
+				font-size: 2em;
+			}
 		}
 	}
 	.main-block-alt {
