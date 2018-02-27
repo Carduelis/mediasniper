@@ -34,6 +34,12 @@
 	border: 0.25rem solid @accent-white;
 	position: relative;
 	display: flex;
+	@media (max-width: 380px) {
+		width: 4rem*@scale*0.8;
+		height: 3rem*@scale*0.8;
+		margin-right: 0;
+		margin-bottom: @bottom-margin*0.8;
+	}
 	&::after {
 		content: attr(data-width)' x 'attr(data-height);
 		content: attr(data-width)' × 'attr(data-height);
@@ -44,6 +50,9 @@
 		padding-top: 0.75em;
 		text-align: center;
 		display: block;
+		@media (max-width: 380px) {
+			font-size: .8em;
+		}
 	}
 	&[title]::after {
 		content: attr(title);

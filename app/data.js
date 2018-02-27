@@ -138,10 +138,16 @@
 			link: "http://www.ford.ru",
 			image: "./assets/clients/ford.png"
 		},
+		// {
+		// 	name: "GLO",
+		// 	link: "https://www.myglo.ru",
+		// 	image: "./assets/clients/glo.png"
+		// },
+
 		{
-			name: "GLO",
-			link: "https://www.myglo.ru",
-			image: "./assets/clients/glo.png"
+			name: "nissan",
+			link: "https://www.nissan.ru/",
+			image: "nissan.png"
 		},
 		{
 			name: "GoAnalitics",
@@ -227,11 +233,6 @@
 			name: "mediaMarkt",
 			link: "https://www.mediamarkt.ru/",
 			image: "mediaMarkt.svg"
-		},
-		{
-			name: "nissan",
-			link: "https://www.nissan.ru/",
-			image: "nissan.png"
 		},
 		{
 			name: "logo-yves-rocher",
