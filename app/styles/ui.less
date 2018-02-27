@@ -118,10 +118,47 @@
 	}
 }
 .scroll-wrapper {
-	overflow-x: auto;
-	-webkit-overflow-scrolling: touch;
+	position: relative;
 	@media (max-width: @bp) {
-		margin: 0 -@side-margin-small;
+		margin: @side-margin-small 0;
+		@arrow-size: 2rem;
+		&::before,
+		&::after {
+			content: '';
+			z-index: 3;
+			display: block;
+			height: 2px;
+			background-color: rgba(127, 127,127, .5);
+			left: auto;
+			width: @arrow-size;
+			right: @arrow-size/2;
+			top: 50%;
+			// box-shadow: 0 0 2px  rgba(0,0,0,.3);
+			position: absolute;
+			animation-duration: 2.5s;
+			animation-fill-mode: forwards;
+			animation-iteration-count: infinite;
+			// background-color: red;
+		}
+		&::after {
+			animation-name: arrowSlideAfter;
+			transform: rotate(45deg);
+			transform-origin: bottom right;
+		}
+		&::before {
+			animation-name: arrowSlideBefore;
+			transform-origin: top right;
+			transform: rotate(-45deg);
+
+		}
+
+		.flex-scroll {
+			// position: relative;
+			// z-index: 2;
+			overflow-x: auto;
+			overflow-y: hidden;
+			-webkit-overflow-scrolling: touch;
+		}
 	}
 }
 .flex-scroll {

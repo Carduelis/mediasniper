@@ -32,6 +32,48 @@
 		opacity: 1;
 	}
 }
+
+@keyframes arrowSlideAfter {
+	0% {
+		transform: translateX(-100%) rotate(45deg);
+		opacity: 0;
+	}
+
+	50% {
+		transform: translateX(0%) rotate(45deg) scale(1.2);
+		opacity: 1;
+	}
+	60% {
+		transform: translateX(50%) rotate(45deg) scale(1.2);
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes arrowSlideBefore {
+	0% {
+		transform: translateX(-100%) rotate(-45deg);
+		opacity: 0;
+	}
+
+	50% {
+		transform: translateX(00%) rotate(-45deg) scale(1.2);
+		opacity: 1;
+	}
+
+	60% {
+		transform: translateX(50%) rotate(-45deg) scale(1.2);
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+
 @keyframes buttonLineBottom {
 	from {
 		transform: rotate(-45deg) translateX(-200%);
