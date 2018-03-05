@@ -23,6 +23,14 @@ section[data-slide='07'] {
 	}
 	.content {
 		width: auto;
+		@media (max-width: @bp) {
+			max-width: 100%;
+			.clients {
+				margin-left: -@side-margin-small;
+				margin-right: -@side-margin-small;
+				padding-left: @side-margin-small;
+			}
+		}
 	}
 	.slide-background::before {
 		opacity: 0;
@@ -43,15 +51,28 @@ section[data-slide='07'] {
 			margin: 1rem 2rem 1rem 0;
 			padding: 0;
 		}
-		&:nth-child(1) {
-			animation-name: autoScroll;
-			animation-direction: alternate;
-			transform: translateX(0);
-		}
-		&:nth-child(2) {
-			animation-name: autoScroll;
-			animation-delay: 5s;
-			animation-direction: alternate;
+		// @media (min-width: @bp) {
+
+			&:nth-child(1) {
+				animation-name: autoScroll;
+				animation-direction: alternate;
+				transform: translateX(0);
+			}
+			&:nth-child(2) {
+				animation-name: autoScroll;
+				animation-delay: 5s;
+				animation-direction: alternate;
+			}
+		// }
+		@media (max-width: @bp) {
+		// 	width: 100%;
+			overflow-x: auto;
+			animation-duration: 5s;
+		// 	// white-space: nowrap;
+		// 	// display: block;
+		// 	> li {
+		// 		// display: inline-block;
+		// 	}
 		}
 	}
 	.client {

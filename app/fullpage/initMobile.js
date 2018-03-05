@@ -18,10 +18,14 @@ export default function() {
 	reRunAnimationButton(ui.get('slide', '01').find('.button'));
 	// HACK: need to indicate while a slide changes for another one
 	setTimeout(() => {
-		reRunAnimationButton($('.section').find('.button'));
+		// reRunAnimationButton($('.section').find('.button'));
 		screenSplashes($('.section'));
 	}, 500);
-
+	const $hashItems = $('[data-slide="05"]').find('.item');
+	$hashItems.on('click', function() {
+		$(this).toggleClass('active');
+		$hashItems.not($(this)).removeClass('active');
+	});
 	function updateSection() {
 		const socioHeight = ui.get('socio').height();
 		const headerHeight = ui.get('header').height();
