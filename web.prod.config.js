@@ -2,18 +2,26 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+// const DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack-plugin');
 
 const extractLess = new ExtractTextPlugin({
-	filename: '[name].css?[id]_[contenthash]',
+	filename: '[name]_[contenthash].css',
 	disable: process.env.NODE_ENV === 'development'
 });
 
 module.exports = {
-	entry: ['babel-polyfill', path.join(__dirname, './app/index')],
+	entry: {
+		app: ['babel-polyfill', path.join(__dirname, './app/index')]
+	},
 	output: {
 		path: path.join(__dirname, './public/'),
-		filename: 'bundle.js',
+		filename: '[name].[chunkhash].js',
 		publicPath: './'
+	},
+	resolve: {
+		alias: {
+			jquery: path.resolve('./node_modules/jquery')
+		}
 	},
 	module: {
 		rules: [
@@ -25,11 +33,16 @@ module.exports = {
 						{
 							loader: 'css-loader',
 							options: {
-								browsers: 'last 2 version',
 								minimize: true
+								}
+							},
+							{
+							loader: 'autoprefixer-loader',
+							options: {
+								browsers: ['last 2 version', 'iOS >= 8']
 							}
 						},
-						{ loader: 'less-loader' }
+						'less-loader'
 					]
 				})
 				// use: [
@@ -66,7 +79,7 @@ module.exports = {
 	plugins: [
 		extractLess,
 		new HtmlWebpackPlugin({
-			title: 'My App',
+			title: 'Mediasniper',
 			template: '!!ejs-compiled-loader!app/index.ejs',
 			filename: 'index.html',
 			minify: {
@@ -74,7 +87,7 @@ module.exports = {
 				minifyCSS: true
 			},
 			files: {
-				css: ['main.css']
+				css: ['main.[hash].css']
 			}
 		}),
 		new webpack.DefinePlugin({
@@ -84,9 +97,15 @@ module.exports = {
 				PLATFORM_ENV: JSON.stringify('web')
 			}
 		}),
-		// optimizations
-		// new webpack.optimize.DedupePlugin(),
-		// new webpack.optimize.OccurenceOrderPlugin(),
+		new webpack.optimize.CommonsChunkPlugin({
+			name: 'vendor',
+			minChunks: ({ resource }) =>
+				// console.log(resource);
+				/node_modules/.test(resource)
+
+			// minChunks: ({ resource }) => usedModulesRegExp.test(resource)
+		}),
+		// new DuplicatePackageCheckerPlugin(),
 		new webpack.optimize.UglifyJsPlugin({
 			compress: {
 				warnings: false

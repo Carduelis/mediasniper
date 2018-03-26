@@ -1,21 +1,23 @@
 import $ from "jquery";
-import "fullpage.js/dist/jquery.fullPage.js";
-import { setColors, screenSplashes } from "../actions";
+import  "fullpage.js/dist/jquery.fullPage.js";
+import { setColors, screenSplashes, UI } from "../actions";
 import { reRunAnimationButton, reanimate } from "../animater";
 import { slides } from "../data";
+
+
 
 const SUB_SLIDE_SEPARATOR = "-";
 export default function() {
 	window.isFirstLoad = true;
-	$("#fullpage").fullpage({
+	const ui = new UI();
+	ui.get('fp').fullpage({
 		anchors: slides.map(slide => slide.anchor),
 		// fixedElements: '.fixed',
 		menu: "#uniqMenu",
-		scrollOverflow: true,
 		onLeave(index, nextIndex, direction) {
 			console.log(`${direction} from ${index} to ${nextIndex}`);
 			console.log();
-			const slide = getSlideByIndex(index);
+			// const slide = getSlideByIndex(index);
 			const nextSlide = getSlideByIndex(nextIndex);
 			// $('.menu').attr('data-color', nextSlide.color);
 			setColors(["sideNav", "header", "socio"], nextSlide.color);
@@ -43,6 +45,7 @@ export default function() {
 				$('.media-nav [data-menuanchor="slide04-1"]').addClass("active");
 				$(".slide04").fadeIn(150);
 			} else {
+				console.log('not a subslide');
 			}
 		},
 		afterRender() {
@@ -52,10 +55,10 @@ export default function() {
 			console.log("resize");
 		},
 		afterResponsive() {},
-		afterSlideLoad(anchorLink, index, slideAnchor, slideIndex) {
-			// console.log(...rest);
-			// screenSplashes($())
-		},
+		// afterSlideLoad(anchorLink, index, slideAnchor, slideIndex) {
+		// 	// console.log(...rest);
+		// 	// screenSplashes($())
+		// },
 		onSlideLeave(anchorLink, index, slideIndex, direction, nextSlideIndex) {
 			// wtf
 			console.log(anchorLink, index, slideIndex, direction, nextSlideIndex);
@@ -70,9 +73,9 @@ const getSlideEl = slide => {
 };
 
 const isASubSlide = slide => slide.anchor.includes(SUB_SLIDE_SEPARATOR);
-const getSubSlideIndex = slide => {
-	if (isASubSlide(slide)) {
-		return slide.anchor.split(SUB_SLIDE_SEPARATOR)[1];
-	}
-	return false;
-};
+// const getSubSlideIndex = slide => {
+// 	if (isASubSlide(slide)) {
+// 		return slide.anchor.split(SUB_SLIDE_SEPARATOR)[1];
+// 	}
+// 	return false;
+// };

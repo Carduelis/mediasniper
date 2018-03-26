@@ -1,4 +1,5 @@
-﻿module.exports = {
+const hyphenate = require('./hyphenate');
+module.exports = {
 	slides: [
 		{
 			titleId: "01",
@@ -101,7 +102,7 @@
 		{
 			name: "Button Blue",
 			link: "https://www.button-blue.com",
-			image: "./assets/clients/buttonblue.webp"
+			image: "./assets/clients/buttonblue.png"
 		},
 		{
 			name: "Ситилинк",
@@ -147,7 +148,7 @@
 		{
 			name: "nissan",
 			link: "https://www.nissan.ru/",
-			image: "nissan.png"
+			image: "./assets/clients/nissan.png"
 		},
 		{
 			name: "GoAnalitics",
@@ -202,129 +203,124 @@
 		{
 			name: "lg",
 			link: "http://www.lg.com/ru",
-			image: "lg.png"
+			image: "./assets/clients/lg.png"
 		},
 		{
 			name: "libero_logo",
 			link: "https://libero.promo/",
-			image: "libero_logo.png"
+			image: "./assets/clients/libero_logo.png"
 		},
 		{
 			name: "lukoil",
 			link: "http://www.lukoil.ru/",
-			image: "lukoil.png"
+			image: "./assets/clients/lukoil.png"
 		},
 		{
 			name: "logo-mcdonalds",
 			link: "https://mcdonalds.ru/",
-			image: "logo-mcdonalds.png"
+			image: "./assets/clients/logo-mcdonalds.png"
 		},
 		{
 			name: "logo-megafon",
 			link: "https://megafon.domru.ru/nsk",
-			image: "logo-megafon.png"
+			image: "./assets/clients/logo-megafon.png"
 		},
 		{
 			name: "crizal-logo",
 			link: "https://crizal.ru/",
-			image: "crizal-logo.png"
+			image: "./assets/clients/crizal-logo.png"
 		},
 		{
 			name: "mediaMarkt",
 			link: "https://www.mediamarkt.ru/",
-			image: "mediaMarkt.svg"
+			image: "./assets/clients/mediaMarkt.svg"
 		},
 		{
 			name: "logo-yves-rocher",
 			link: "https://www.yves-rocher.ru/",
-			image: "logo-yves-rocher.svg"
+			image: "./assets/clients/logo-yves-rocher.svg"
 		},
-		{
-			name: "rush",
-			link: "https://cyberleague.adrenalinerush.ru/",
-			image: "rush.png"
-		},
+		// {
+		// 	name: "rush",
+		// 	link: "https://cyberleague.adrenalinerush.ru/",
+		// 	image: "./assets/clients/rush.png"
+		// },
 		{
 			name: "logo-agusha",
 			link: "https://agulife.ru/",
-			image: "logo-agusha.png"
+			image: "./assets/clients/logo-agusha.png"
 		},
 		{
 			name: "lipton_logo_bw",
 			link: "https://www.lipton.com/ru/home.html",
-			image: "lipton_logo_bw.png"
+			image: "./assets/clients/lipton_logo_bw.png"
 		},
 		{
 			name: "renault",
 			link: "https://www.renault.ru/",
-			image: "renault.png"
-		},
-		{
-			name: "volkswagen",
-			link: "https://www.volkswagen.ru/ru.html",
-			image: "volkswagen.jpg"
+			image: "./assets/clients/renault.png"
 		},
 		{
 			name: "qiwi",
 			link: "https://qiwi.com/",
-			image: "qiwi.png"
+			image: "./assets/clients/qiwi.png"
 		},
 		{
 			name: "mitsubishi",
 			link: "https://www.mitsubishi.ru/",
-			image: "mitsubishi.png"
+			image: "./assets/clients/mitsubishi.png"
 		}
 	],
 	tools: [
 		{
 			name: "Динамические креативы",
 			description:
-				"Персонализированные баннеры для каждой группы целевой аудитории, меняющиеся в зависимости от их поведения и/или предпочтений."
+				hyphenate("Персонализированные баннеры для каждой группы целевой аудитории, меняющиеся в зависимости от их поведения и/или предпочтений.")
 		},
 		{
 			name: "Кастомные сегменты",
 			description:
-				"Построение уникальных и специфических сегментов аудитории под конкретного рекламодателя / рекламную кампанию / продукт."
+				hyphenate("Построение уникальных и специфических сегментов аудитории под конкретного рекламодателя / рекламную кампанию / продукт.")
 		},
 		{
 			name: "Контекстный таргетинг",
 			description:
-				"Работает с контекстом окружения рекламного места на основе анализа семантики страницы. Демонстрация креативов происходит на площадках, где встречаются заранее подобранные ключевые слова."
+				hyphenate("Работает с контекстом окружения рекламного места на основе анализа семантики страницы. Демонстрация креативов происходит на площадках, где встречаются заранее подобранные ключевые слова.")
 		},
 		{
 			name: "Brand Safety",
 			description:
-				"Защита бренда и его рекламных материалов от неблагоприятного информационного окружения."
+				hyphenate("Защита бренда и его рекламных материалов от неблагоприятного информационного окружения.")
 		},
 		{
 			name: "Ретаргетинг",
 			description:
-				"Персонализированное обращение через баннеры к пользователям, которые уже просмотрели рекламируемый продукт, посетив сайт рекламодателя."
+				hyphenate("Персонализированное обращение через баннеры к пользователям, которые уже просмотрели рекламируемый продукт, посетив сайт рекламодателя.")
 		},
 		{
 			name: "Look-alike",
 			description:
-				"Таргетинг, благодаря которому товар или услугу предлагают пользователям, по многим показателям похожим на существующих клиентов рекламодателя."
+				hyphenate("Таргетинг, благодаря которому товар или услугу предлагают пользователям, по многим показателям похожим на существующих клиентов рекламодателя.")
 		},
 		{
 			name: "Статистика Real-time",
 			description:
-				"Доступ к статистике рекламной кампании в режиме реального времени."
+				hyphenate("Доступ к статистике рекламной кампании в режиме реального времени.")
 		},
 		{
-			name: "Оптимизация по CPM, CPC, CPA, CPnBV, CPS",
+			name: "Оптимизация по CPM, CPC, CPA, CPS",
 			description:
-				"Оптимизация рекламной кампании на достижение заданных рекламодателем показателей – стоимость сеанса, стоимость целевого действия и др."
+				hyphenate("Оптимизация рекламной кампании на достижение заданных рекламодателем показателей – стоимость сеанса, стоимость целевого действия и др.")
 		},
 		{
 			name: "TV Sync",
 			description:
-				"Технология единовременной и ситуативной синхронизации интернет-рекламы с событиями на TV, выходом собственного или конкурирующего ролика."
+				hyphenate("Технология единовременной и ситуативной синхронизации интернет-рекламы с событиями на TV, выходом собственного или конкурирующего ролика.")
 		},
 		{
 			name: "Brand lift",
 			description:
-				"Оценка уровня влияния интернет рекламы на рост узнаваемости или лояльности к бренду."
+				hyphenate("Оценка уровня влияния интернет рекламы на рост узнаваемости или лояльности к бренду.")
 		}
 	],
 	projects: [

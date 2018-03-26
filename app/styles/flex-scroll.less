@@ -1,0 +1,73 @@
+
+.scroll-wrapper {
+	position: relative;
+
+			.flex-scroll-helptext {
+				display: none;
+			}
+	@media (max-width: @bp) {
+		margin: @side-margin-small 0;
+
+		.flex-scroll {
+			// position: relative;
+			// z-index: 2;
+			overflow-x: auto;
+			overflow-y: hidden;
+			-webkit-overflow-scrolling: touch;
+			padding-bottom: 2rem;
+
+		}
+
+		.flex-scroll-helptext {
+			@arrow-size: .75rem;
+			// text-transform: uppercase;
+			font-size: @arrow-size*1.25;
+			font-family: 'Exo 2';
+			@color: rgba(127, 127, 127, 1);
+			color: @color;
+			animation-duration: 4s;
+			animation-fill-mode: forwards;
+			animation-iteration-count: infinite;
+			animation-name: arrowSlide;
+			display: block;
+			position: absolute;
+			padding-right: @arrow-size*2;
+			right: @side-margin-small;
+			margin-top: @arrow-size;
+			font-style: italic;
+			&::before,
+			&::after {
+				content: '';
+				z-index: 3;
+				display: block;
+				height: 1px;
+				background-color: @color;
+				right: 0;
+				width: @arrow-size;
+				right: @arrow-size/2;
+				top: 50%;
+				// margin-top: -@arrow-size/5;
+				// box-shadow: 0 0 2px  rgba(0,0,0,.3);
+				position: absolute;
+				// background-color: red;
+			}
+			&::after {
+				transform: rotate(45deg);
+				transform-origin: bottom right;
+			}
+			&::before {
+				transform-origin: top right;
+				transform: rotate(-45deg);
+			}
+		}
+	}
+}
+.flex-scroll {
+	display: flex;
+	// align-items: flex-end;
+	padding-bottom: 2rem;
+	align-items: stretch;
+	@media (max-width: @bp) {
+		padding: 0 @side-margin-small;
+	}
+}

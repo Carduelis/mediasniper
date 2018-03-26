@@ -1,13 +1,7 @@
 import $ from 'jquery';
-import 'fullpage.js/dist/jquery.fullPage.js';
-import init from './init';
-import initMobile from './initMobile';
-import destroy from './destroy';
-import destroyMobile from './destroyMobile';
-import isEnabled from './isEnabled';
-import { reRunAnimationButton, reanimate } from '../animater';
-import { UI, setMenuAs, setColors, screenSplashes, slide } from '../actions';
-import { slides } from '../data';
+import debounce from 'debounce';
+import mainSwitcher from './mainSwitcher';
+import { UI, setMenuAs } from '../actions';
 
 export default function(route) {
 	console.log(route);
@@ -20,25 +14,18 @@ export default function(route) {
 			setMenuAs({ opened: true });
 		}
 	});
-	if (isEnabled()) {
-		console.log('fullPageSlider has already been initialized');
-	} else {
-		if ($(window).width() > 800) {
-			destroyMobile();
-			init();
-		} else {
-			initMobile();
-			destroy();
-		}
-	}
 
-	$(window).on('resize', () => {
-		if ($(window).width() > 800) {
-			destroyMobile();
-			init();
+	mainSwitcher(800);
+	// let height = $(window).height();
+	let width = $(window).width();
+	$(window).on('resize', debounce(() => {
+		// const deltaHeight = Math.abs(height - $(window).height());
+		const deltaWidth = Math.abs(width - $(window).width());
+		// if (deltaHeight < 50 && deltaHeight !== 0) {
+		if (deltaWidth === 0) {
+			console.log('skipping resize event');
 		} else {
-			initMobile();
-			destroy();
+			mainSwitcher(800);
 		}
-	});
+	}, 150));
 }

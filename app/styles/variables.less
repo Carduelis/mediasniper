@@ -33,6 +33,23 @@
 	}
 }
 
+@keyframes arrowSlide {
+	0% {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+	80% {
+		transform: translateX(0%);
+		opacity: 1;
+	}
+	90% {
+		transform: translateX(50%);
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
 @keyframes arrowSlideAfter {
 	0% {
 		transform: translateX(-100%) rotate(45deg);
@@ -107,10 +124,10 @@
 			transform: translateX(0);
 		}
 		80% {
-			transform: translateX(calc(80vw + -100%));
+			transform: translateX(calc(~"80vw + -100%"));
 		}
 		100% {
-			transform: translateX(calc(80vw + -100%));
+			transform: translateX(calc(~"80vw + -100%"));
 		}
 }
 

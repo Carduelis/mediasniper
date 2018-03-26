@@ -1,12 +1,17 @@
 .fixed-header {
 	position: fixed;
-	z-index: 11;
+	z-index: 110;
 	width: 100%;
-	left: 0;
+	right: 0;
 	color: @white-text;
 	transition: all 200ms;
 	svg path {
 		fill: @white-text;
+	}
+	&[data-logo='hide'] {
+		.header-logo-block {
+			opacity: 0;
+		}
 	}
 	@media (max-width: @bp) {
 		// background-color: rgba(0,0,0,.3);
@@ -21,7 +26,7 @@
 			fill: @black-text;
 		}
 		@media (max-width: @bp) {
-			background-color: fadeout(@white-text, 99%);
+			// background-color: fadeout(@white-text, 99%);
 			// border-bottom: 1px solid fadeout(@white-text, 60%);
 		}
 	}
@@ -31,7 +36,7 @@
 			fill: @white-text;
 		}
 		@media (max-width: @bp) {
-			background-color: fadeout(@black-text, 99%);
+			// background-color: fadeout(@black-text, 99%);
 			// border-bottom: 1px solid fadeout(@white-text, 60%);
 		}
 	}
@@ -48,7 +53,7 @@
 	padding: @side-margin-small/2 @side-margin-small;
 
 	@media (max-width: @bp) {
-		backdrop-filter: blur(3px);
+		// backdrop-filter: blur(3px);
 	}
 }
 

@@ -3,7 +3,6 @@ import './styles/style.less';
 import { Router } from 'director/build/director';
 // import Path from './router';
 // import page from 'page';
-import { slides } from './data';
 import fullPageSlider from './fullpage';
 import destroySlider from './fullpage/destroy';
 import init from './mainInit';
@@ -24,7 +23,7 @@ const router = new Router({
 	'*': function(route) {
 		destroyProjects();
 		if (route.match('slide')) {
-			fullPageSlider(route)
+			fullPageSlider(route);
 		} else {
 			alert('404 Not Found');
 		}

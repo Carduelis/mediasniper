@@ -7,7 +7,7 @@ section[data-slide='07'] {
 		right: 0;
 		width: 20%;
 		z-index: 99;
-		min-width: 10rem;
+		min-width: 5rem;
 		display: block;
 		top: 0;
 		bottom: 0;
@@ -40,9 +40,11 @@ section[data-slide='07'] {
 		margin: 2rem 0;
 	}
 	.auto-scroll {
-		display: flex;
+		display: inline-flex;
 		animation-duration: 10s;
+		// background-color: rgba(255,0,0,2);
 		animation-timing-function: ease-in-out;
+		animation-timing-function: linear;
 		animation-iteration-count: infinite;
 		&:hover {
 			animation-play-state: paused;
@@ -66,8 +68,8 @@ section[data-slide='07'] {
 		// }
 		@media (max-width: @bp) {
 		// 	width: 100%;
-			overflow-x: auto;
-			animation-duration: 5s;
+			// overflow-x: auto;
+			animation-duration: 15s;
 		// 	// white-space: nowrap;
 		// 	// display: block;
 		// 	> li {
